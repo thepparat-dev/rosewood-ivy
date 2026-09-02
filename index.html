@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosewood & Ivy — Curated Blooms with Quiet Elegance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf8f5;
+      --warm-white: #f5f2ee;
+      --blush: #e8d5c4;
+      --rose: #c9a99a;
+      --deep: #2c2420;
+      --mid: #6b5b55;
+      --light: #a89590;
+      --border: #e2dbd6;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', 'Helvetica Neue', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--deep);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announcement {
+      background: var(--deep);
+      color: var(--blush);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: var(--sans);
+      font-weight: 300;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--deep);
+      text-decoration: none;
+    }
+
+    .logo span {
+      font-weight: 300;
+      font-style: italic;
+      font-size: 13px;
+      display: block;
+      letter-spacing: 2px;
+      color: var(--light);
+      text-transform: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+    }
+
+    nav a {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    nav a:hover { color: var(--deep); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-actions a {
+      color: var(--mid);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .header-actions a:hover { color: var(--deep); }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .lang-btn {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--light);
+      background: none;
+      border: none;
+      padding: 4px 10px;
+      cursor: pointer;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: all 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--deep); }
+
+    .lang-btn.active {
+      color: var(--cream);
+      background: var(--deep);
+    }
+
+    .lang-divider {
+      width: 1px;
+      height: 12px;
+      background: var(--border);
+    }
+
+    html[lang="th"] .hero-title,
+    html[lang="th"] .section-title,
+    html[lang="th"] .product-name,
+    html[lang="th"] .testimonial-text,
+    html[lang="th"] .modal-info .product-name {
+      letter-spacing: normal;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .social-row a {
+      color: var(--light);
+      font-size: 16px;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .social-row a:hover { color: var(--deep); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--deep);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 80px;
+      background: var(--warm-white);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--deep);
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-sub {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 380px;
+      margin-bottom: 44px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 40px;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-dark {
+      background: var(--deep);
+      color: var(--cream);
+    }
+
+    .btn-dark:hover {
+      background: var(--mid);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--deep);
+      border: 1px solid var(--deep);
+    }
+
+    .btn-outline:hover {
+      background: var(--deep);
+      color: var(--cream);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      background: var(--cream);
+      padding: 20px 24px;
+      font-family: var(--serif);
+    }
+
+    .hero-badge .num {
+      font-size: 36px;
+      font-weight: 300;
+      display: block;
+      color: var(--deep);
+      line-height: 1;
+    }
+
+    .hero-badge .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--light);
+      font-family: var(--sans);
+      font-weight: 300;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 80px; }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--deep);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-title em { font-style: italic; }
+
+    .section-sub {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    /* ── CATEGORY STRIP ── */
+    .categories {
+      padding: 48px 80px;
+      background: var(--deep);
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .cat-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+    }
+
+    .cat-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      filter: brightness(0.75);
+    }
+
+    .cat-item:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.85);
+    }
+
+    .cat-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 28px 20px 20px;
+      background: linear-gradient(transparent, rgba(30,20,18,0.85));
+      color: white;
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .cat-label small {
+      display: block;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--cream); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .product-card {
+      cursor: pointer;
+    }
+
+    .product-img {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      margin-bottom: 16px;
+      background: var(--warm-white);
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.04);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--deep);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 10px;
+    }
+
+    .product-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--deep);
+      margin-bottom: 4px;
+    }
+
+    .product-type {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--light);
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--mid);
+      font-weight: 400;
+    }
+
+    .product-price .from {
+      font-size: 11px;
+      color: var(--light);
+      margin-right: 4px;
+    }
+
+    .product-add {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--deep);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 14px;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .product-card:hover .product-add {
+      transform: translateY(0);
+    }
+
+    /* ── FEATURE SPLIT ── */
+    .feature-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+      background: var(--warm-white);
+      padding: 0;
+    }
+
+    .feature-img {
+      overflow: hidden;
+    }
+
+    .feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px;
+    }
+
+    .feature-content .section-sub {
+      margin-bottom: 40px;
+    }
+
+    /* ── EXCLUSIVE ── */
+    .exclusive {
+      background: var(--deep);
+      color: var(--cream);
+      text-align: center;
+      padding: 100px 80px;
+    }
+
+    .exclusive .section-label { color: var(--rose); }
+
+    .exclusive .section-title { color: var(--cream); }
+
+    .exclusive .section-sub {
+      color: rgba(250,248,245,0.65);
+      margin: 0 auto 48px;
+    }
+
+    .exclusive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 64px;
+      text-align: left;
+    }
+
+    .exclusive-item {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 28px;
+    }
+
+    .exclusive-item h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .exclusive-item p {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: rgba(250,248,245,0.55);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ── BESPOKE MOMENTS ── */
+    .moments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .moment-item {
+      display: block;
+      text-decoration: none;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+      cursor: pointer;
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    .moment-item:hover {
+      background: var(--cream);
+      border-color: var(--rose);
+    }
+
+    .moment-item h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--deep);
+      margin-bottom: 12px;
+    }
+
+    .moment-item p {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .moment-item.is-cta {
+      background: var(--rose);
+      border-color: var(--rose);
+    }
+
+    .moment-item.is-cta:hover {
+      background: var(--deep);
+      border-color: var(--deep);
+    }
+
+    .moment-item.is-cta h3 { color: var(--cream); }
+
+    .moment-item.is-cta p { color: rgba(250,248,245,0.8); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 56px;
+      text-align: left;
+    }
+
+    .testimonial-card {
+      border: 1px solid var(--border);
+      padding: 36px;
+    }
+
+    .stars {
+      color: var(--rose);
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--deep);
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--light);
+      font-weight: 400;
+    }
+
+    .testimonial-card.user-review {
+      border-color: var(--rose);
+      position: relative;
+    }
+
+    .testimonial-card.user-review::before {
+      content: 'Verified Customer';
+      position: absolute;
+      top: -1px;
+      right: 20px;
+      background: var(--rose);
+      color: white;
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      font-weight: 400;
+    }
+
+    .review-tag {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 6px;
+      font-weight: 300;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .testimonial-card.animating { animation: cardIn 0.5s ease forwards; }
+
+    /* ── REVIEW FORM ── */
+    .review-section {
+      background: var(--warm-white);
+      padding: 80px;
+    }
+
+    .review-form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      padding: 52px;
+    }
+
+    .star-picker {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .star-picker input[type="radio"] { display: none; }
+
+    .star-picker label {
+      font-size: 28px;
+      color: var(--border);
+      cursor: pointer;
+      transition: color 0.15s, transform 0.15s;
+      line-height: 1;
+    }
+
+    .star-picker label:hover,
+    .star-picker label.selected {
+      color: var(--rose);
+      transform: scale(1.15);
+    }
+
+    .star-hint {
+      font-family: var(--sans);
+      font-size: 11px;
+      color: var(--light);
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      font-weight: 300;
+      min-height: 16px;
+    }
+
+    .review-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .review-success .icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .review-success h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+
+    .review-success p {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--light);
+      font-weight: 300;
+    }
+
+    @media (max-width: 900px) {
+      .review-section { padding: 60px 32px; }
+      .review-form-wrap { padding: 36px 24px; }
+    }
+
+    /* ── REELS ── */
+    .reels {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .reels .section-header {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .reels-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .reel-card {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      background: var(--warm-white);
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(44, 36, 32, 0.06);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .reel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(44, 36, 32, 0.14);
+    }
+
+    .reel-card.is-loaded {
+      cursor: default;
+      aspect-ratio: auto;
+      min-height: 560px;
+    }
+
+    .reel-card iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .reel-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background:
+        linear-gradient(180deg, rgba(44, 36, 32, 0) 40%, rgba(44, 36, 32, 0.5) 100%),
+        linear-gradient(135deg, var(--blush), var(--rose));
+      transition: filter 0.4s;
+    }
+
+    .reel-card:hover .reel-placeholder { filter: brightness(1.05); }
+
+    .reel-play {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(44, 36, 32, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .reel-card:hover .reel-play { transform: scale(1.08); }
+
+    .reel-play svg {
+      width: 18px;
+      height: 18px;
+      margin-left: 3px;
+      fill: var(--deep);
+    }
+
+    .reel-meta {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      color: white;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .reel-meta svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── INSTAGRAM / GALLERY ── */
+    .gallery {
+      padding: 80px 0 0;
+      background: var(--warm-white);
+    }
+
+    .gallery-header {
+      text-align: center;
+      padding: 0 80px 56px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      aspect-ratio: 1;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.75);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: white;
+      font-size: 24px;
+    }
+
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      background: var(--blush);
+      text-align: center;
+      padding: 80px;
+    }
+
+    .newsletter .section-title { color: var(--deep); }
+
+    .newsletter .section-sub {
+      margin: 0 auto 40px;
+      color: var(--mid);
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 20px;
+      border: 1px solid var(--deep);
+      background: white;
+      font-family: var(--sans);
+      font-size: 13px;
+      outline: none;
+      color: var(--deep);
+    }
+
+    .newsletter-form input::placeholder { color: var(--light); }
+
+    .newsletter-form .btn { padding: 14px 28px; font-size: 10px; }
+
+    /* ── CONTACT ── */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 0;
+    }
+
+    .contact-info {
+      background: var(--deep);
+      color: var(--cream);
+      padding: 80px;
+    }
+
+    .contact-info .section-label { color: var(--rose); }
+    .contact-info .section-title { color: var(--cream); }
+    .contact-info .section-sub { color: rgba(250,248,245,0.6); margin-bottom: 48px; }
+
+    .contact-detail {
+      margin-bottom: 28px;
+    }
+
+    .contact-detail .label {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+
+    .contact-detail .value {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .contact-form {
+      background: var(--warm-white);
+      padding: 80px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--deep);
+      outline: none;
+      transition: border-color 0.2s;
+      font-weight: 300;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--rose);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a110e;
+      color: rgba(250,248,245,0.5);
+      padding: 64px 80px 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand .logo {
+      color: var(--cream);
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand p {
+      font-family: var(--sans);
+      font-size: 13px;
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 280px;
+      margin-bottom: 28px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      color: rgba(250,248,245,0.4);
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover { color: var(--cream); }
+
+    .footer-col h4 {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: rgba(250,248,245,0.45);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 300;
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(30,20,18,0.75);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--cream);
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-img {
+      overflow: hidden;
+    }
+
+    .modal-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-info {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--light);
+      line-height: 1;
+      margin-bottom: 32px;
+    }
+
+    .modal-info .product-type { margin-bottom: 8px; }
+
+    .modal-info .product-name {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .modal-price {
+      font-family: var(--serif);
+      font-size: 24px;
+      color: var(--deep);
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .modal-desc {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 32px;
+      flex: 1;
+    }
+
+    .modal-select {
+      margin-bottom: 20px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      section { padding: 80px 48px; }
+      .hero-text { padding: 60px 48px 60px 60px; }
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+      .moments-grid { grid-template-columns: repeat(2, 1fr); }
+      .reels-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 900px) {
+      .header-top { padding: 0 24px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { height: 50vh; }
+      .hero-text { padding: 60px 32px; }
+      .hero-badge { bottom: 20px; left: 20px; }
+      section { padding: 60px 32px; }
+      .categories { padding: 0; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .moments-grid { grid-template-columns: 1fr; gap: 16px; }
+      .feature-split { grid-template-columns: 1fr; }
+      .feature-img { height: 50vh; }
+      .feature-content { padding: 48px 32px; }
+      .exclusive-grid { grid-template-columns: 1fr; gap: 28px; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .reels { padding: 60px 32px; }
+      .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .reel-card.is-loaded { min-height: 640px; }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .contact { grid-template-columns: 1fr; }
+      .contact-info { padding: 60px 32px; }
+      .contact-form { padding: 60px 32px; }
+      footer { padding: 48px 32px 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .modal { grid-template-columns: 1fr; }
+      .modal-img { height: 300px; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .exclusive { padding: 60px 24px; }
+    }
+
+    /* ── MOBILE NAV ── */
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: var(--deep);
+      z-index: 150;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .mobile-nav.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav a {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: var(--cream);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ── UTILS ── */
+    .text-center { text-align: center; }
+    .mt-8 { margin-top: 8px; }
+    .divider { width: 48px; height: 1px; background: var(--rose); margin: 24px 0; }
+    .divider.center { margin: 24px auto; }
+  </style>
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announcement" data-th="จัดส่งฟรีในกรุงเทพฯ · ทักแชทเพื่อจอง · @rosewoodandlvy">Free delivery within Bangkok · DM to reserve · @rosewoodandlvy</div>
+
+<!-- Header -->
+<header>
+  <div class="header-top">
+    <a href="#" class="logo">
+      Rosewood & Ivy
+      <span data-th="กรุงเทพฯ · ดอกไม้คัดสรร">Bangkok · Curated Blooms</span>
+    </a>
+    <nav>
+      <a href="#collections" data-th="คอลเลกชัน">Collections</a>
+      <a href="#products" data-th="ร้านค้า">Shop</a>
+      <a href="#moments" data-th="โมเมนต์พิเศษ">Moments</a>
+      <a href="#exclusive" data-th="พิเศษ">Exclusive</a>
+      <a href="#reels" data-th="รีลส์">Reels</a>
+      <a href="#about" data-th="เกี่ยวกับเรา">About</a>
+      <a href="#contact" data-th="ติดต่อ">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <span class="lang-divider"></span>
+        <button type="button" class="lang-btn" data-lang="th" onclick="setLang('th')">TH</button>
+      </div>
+      <div class="social-row">
+        <a href="https://instagram.com/rosewoodandlvy" target="_blank" title="Instagram">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" title="Line">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+      </div>
+      <a href="#contact" class="btn btn-dark" data-th="สั่งซื้อ">Order Now</a>
+    </div>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
+  <a href="#collections" onclick="closeMobileNav()" data-th="คอลเลกชัน">Collections</a>
+  <a href="#products" onclick="closeMobileNav()" data-th="ร้านค้า">Shop</a>
+  <a href="#moments" onclick="closeMobileNav()" data-th="โมเมนต์พิเศษ">Moments</a>
+  <a href="#exclusive" onclick="closeMobileNav()" data-th="พิเศษ">Exclusive</a>
+  <a href="#reels" onclick="closeMobileNav()" data-th="รีลส์">Reels</a>
+  <a href="#about" onclick="closeMobileNav()" data-th="เกี่ยวกับเรา">About</a>
+  <a href="#contact" onclick="closeMobileNav()" data-th="ติดต่อ">Contact</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" style="padding:0;">
+  <div class="hero-text">
+    <p class="hero-eyebrow" data-th="กรุงเทพฯ · ก่อตั้ง 2024">Bangkok · Est. 2024</p>
+    <h1 class="hero-title" data-th="ไม่ใช่แค่ดอกไม้<br/>แต่คือความรู้สึก<br/><em>ที่เธอจะจดจำ</em>">
+      Not just flowers,<br/>
+      but a feeling<br/>
+      <em>she'll remember.</em>
+    </h1>
+    <p class="hero-sub" data-th="ดอกไม้คัดสรรด้วยความงดงามที่เรียบหรู ทุกช่อจัดด้วยมือในกรุงเทพฯ — สำหรับช่วงเวลาที่สมควรได้รับสิ่งที่งดงาม">
+      Curated blooms with quiet elegance. Each arrangement is crafted by hand in Bangkok — for the moments that deserve something beautiful.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn btn-dark" data-th="เลือกซื้อเลย">Shop Now</a>
+      <a href="#exclusive" class="btn btn-outline" data-th="สั่งทำพิเศษ">Custom Order</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <!-- Baby's breath hero image -->
+    <img
+      src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=900&q=80"
+      alt="Rosewood & Ivy signature bouquet"
+      onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=900&q=80'"
+    />
+    <div class="hero-badge">
+      <span class="num">100%</span>
+      <span class="label" data-th="ทำมือทุกช่อ">Handcrafted</span>
+    </div>
+  </div>
+</section>
+
+<!-- Collections Strip -->
+<div class="categories" id="collections">
+  <div class="cat-grid">
+    <div class="cat-item" onclick="document.getElementById('signature').scrollIntoView({behavior:'smooth'})">
+      <img src="Image/collections/gift-edit/beauty-4.jpg" alt="The Signature Collection" onerror="this.style.background='#c9a99a'" />
+      <div class="cat-label" data-th="<small>คอลเลกชัน</small>The Signature Collection"><small>Collection</small>The Signature Collection</div>
+    </div>
+    <div class="cat-item" onclick="document.getElementById('rose-edit').scrollIntoView({behavior:'smooth'})">
+      <img src="Image/collections/gift-edit/gift-5.jpg" alt="The Rose Edit" onerror="this.style.background='#c9a99a'" />
+      <div class="cat-label" data-th="<small>คอลเลกชัน</small>01 &middot; The Rose Edit"><small>Collection</small>01 &middot; The Rose Edit</div>
+    </div>
+    <div class="cat-item" onclick="document.getElementById('gift-edit').scrollIntoView({behavior:'smooth'})">
+      <img src="Image/collections/gift-edit/beauty-5.jpg" alt="The Curated Gift Edit" onerror="this.style.background='#c9a99a'" />
+      <div class="cat-label" data-th="<small>คอลเลกชัน</small>02 &middot; The Curated Gift Edit"><small>Collection</small>02 &middot; The Curated Gift Edit</div>
+    </div>
+    <div class="cat-item" onclick="document.getElementById('moments').scrollIntoView({behavior:'smooth'})">
+      <img src="Image/collections/gift-edit/beauty-6.jpg" alt="Bespoke Moments" onerror="this.style.background='#c9a99a'" />
+      <div class="cat-label" data-th="<small>คอลเลกชัน</small>03 &middot; Bespoke Moments"><small>Collection</small>03 &middot; Bespoke Moments</div>
+    </div>
+  </div>
+</div>
+
+<!-- The Signature Collection -->
+<section class="products" id="products">
+  <span id="signature"></span>
+  <div class="section-header">
+    <div>
+      <p class="section-label">The Signature Collection</p>
+      <h2 class="section-title" data-th="ซิกเนเจอร์<em>ของเรา</em>">Our <em>Signature</em></h2>
+      <p class="section-sub" data-th="หน้าตาของ Rosewood &amp; Ivy — ผลงานที่บ่งบอกตัวตนของเรา">The face of Rosewood &amp; Ivy — the pieces that define us.</p>
+    </div>
+    <a href="#contact" class="btn btn-outline" data-th="สอบถาม &rarr;">Enquire &rarr;</a>
+  </div>
+  <div class="product-grid">
+
+    <div class="product-card" onclick="openModal('signature-cloud')">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=600&q=80" alt="Signature Cloud Bouquet" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <span class="product-tag" data-th="ขายดี">Best Seller</span>
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type" data-th="ซิกเนเจอร์ · เบบี้เบรธ">Signature · Baby's Breath</p>
+      <h3 class="product-name" data-th="ช่อคลาวด์ซิกเนเจอร์">Signature Cloud Bouquet</h3>
+      <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿1,200</p>
+    </div>
+
+    <div class="product-card" onclick="openModal('signature-white')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/beauty-4.jpg" alt="Signature White Bouquet" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type" data-th="ซิกเนเจอร์ไวท์">Signature White</p>
+      <h3 class="product-name" data-th="ช่อซิกเนเจอร์ไวท์">Signature White Bouquet</h3>
+      <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿1,500</p>
+    </div>
+
+    <div class="product-card" onclick="openModal('dior-inspired')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/beauty-9.jpg" alt="Dior-Inspired Edit" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <span class="product-tag" data-th="พิเศษ">Exclusive</span>
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type" data-th="แรงบันดาลใจจาก Dior">Dior-Inspired</p>
+      <h3 class="product-name">Dior-Inspired Edit</h3>
+      <p class="product-price"><span class="from" data-th="สอบถามราคา">Price upon request</span></p>
+    </div>
+
+    <div class="product-card" onclick="openModal('peony')">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=80" alt="Peony Collection" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <span class="product-tag" data-th="ตามฤดูกาล">Seasonal</span>
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type" data-th="พีโอนีตามฤดูกาล">Peony Season</p>
+      <h3 class="product-name" data-th="คอลเลกชันพีโอนี">Peony Collection</h3>
+      <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿2,800</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 01 · The Rose Edit -->
+<section class="products" id="rose-edit">
+  <div class="section-header">
+    <div>
+      <p class="section-label">01 &mdash; The Rose Edit</p>
+      <h2 class="section-title">The <em>Rose Edit</em></h2>
+      <p class="section-sub" data-th="กุหลาบในจำนวนที่บอกความรู้สึกได้ดีที่สุด">Roses in the number that says it best.</p>
+    </div>
+    <a href="#contact" class="btn btn-outline" data-th="สอบถาม &rarr;">Enquire &rarr;</a>
+  </div>
+  <div class="product-grid">
+
+    <div class="product-card" onclick="openModal('roses-20')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/beauty-1.jpg" alt="20 Roses" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Rose Edit</p>
+      <h3 class="product-name" data-th="กุหลาบ 20 ดอก">20 Roses</h3>
+      <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿2,500</p>
+    </div>
+
+    <div class="product-card" onclick="openModal('roses-50')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/gift-4.jpg" alt="50 Roses" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Rose Edit</p>
+      <h3 class="product-name" data-th="กุหลาบ 50 ดอก">50 Roses</h3>
+      <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿4,900</p>
+    </div>
+
+    <div class="product-card" onclick="openModal('roses-101')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/beauty-7.jpg" alt="101 Roses" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <span class="product-tag" data-th="เหนือระดับ">Statement</span>
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Rose Edit</p>
+      <h3 class="product-name" data-th="กุหลาบ 101 ดอก">101 Roses</h3>
+      <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿8,900</p>
+    </div>
+
+    <div class="product-card" onclick="openModal('roses-bespoke')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/gift-5.jpg" alt="Bespoke Rose Bouquet" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Rose Edit</p>
+      <h3 class="product-name" data-th="ช่อกุหลาบสั่งทำพิเศษ">Bespoke Rose Bouquet</h3>
+      <p class="product-price"><span class="from" data-th="สอบถามราคา">Price upon request</span></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 02 · The Curated Gift Edit -->
+<section class="products" id="gift-edit">
+  <div class="section-header">
+    <div>
+      <p class="section-label">02 &mdash; The Curated Gift Edit</p>
+      <h2 class="section-title" data-th="ดอกไม้<em>ที่จับคู่อย่างลงตัว</em>">Flowers, <em>Paired Perfectly</em></h2>
+      <p class="section-sub" data-th="ดอกไม้สดจัดคู่กับของขวัญสุดหรู — บิวตี้ แฟชั่น และอีกมากมาย">Fresh blooms arranged around luxury gifts — beauty, fashion, and more.</p>
+    </div>
+    <a href="#contact" class="btn btn-outline" data-th="สอบถาม &rarr;">Enquire &rarr;</a>
+  </div>
+  <div class="product-grid">
+
+    <div class="product-card" onclick="openModal('gift-beauty')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/beauty-5.jpg" alt="Flowers &amp; Beauty" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Curated Gift Edit</p>
+      <h3 class="product-name" data-th="ดอกไม้ &amp; บิวตี้">Flowers &amp; Beauty</h3>
+      <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿4,500</p>
+    </div>
+
+    <div class="product-card" onclick="openModal('gift-eyewear')">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80" alt="Flowers &amp; Eyewear" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Curated Gift Edit</p>
+      <h3 class="product-name" data-th="ดอกไม้ &amp; แว่นตา">Flowers &amp; Eyewear</h3>
+      <p class="product-price"><span class="from" data-th="สอบถามราคา">Price upon request</span></p>
+    </div>
+
+    <div class="product-card" onclick="openModal('gift-fashion')">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80" alt="Flowers &amp; Fashion" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Curated Gift Edit</p>
+      <h3 class="product-name" data-th="ดอกไม้ &amp; แฟชั่น">Flowers &amp; Fashion</h3>
+      <p class="product-price"><span class="from" data-th="สอบถามราคา">Price upon request</span></p>
+    </div>
+
+    <div class="product-card" onclick="openModal('gift-bags')">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80" alt="Flowers &amp; Bags" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Curated Gift Edit</p>
+      <h3 class="product-name" data-th="ดอกไม้ &amp; กระเป๋า">Flowers &amp; Bags</h3>
+      <p class="product-price"><span class="from" data-th="สอบถามราคา">Price upon request</span></p>
+    </div>
+
+    <div class="product-card" onclick="openModal('gift-more')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/gift-2.jpg" alt="Flowers &amp; More" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Curated Gift Edit</p>
+      <h3 class="product-name" data-th="ดอกไม้ &amp; อื่น ๆ">Flowers &amp; More</h3>
+      <p class="product-price"><span class="from" data-th="สอบถามราคา">Price upon request</span></p>
+    </div>
+
+    <div class="product-card" onclick="openModal('gift-bespoke')">
+      <div class="product-img">
+        <img src="Image/collections/gift-edit/beauty-3.jpg" alt="Bespoke Luxury Gift" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=600&q=80'" />
+        <span class="product-tag" data-th="พิเศษ">Exclusive</span>
+        <button class="product-add" data-th="จองเลย">Reserve Now</button>
+      </div>
+      <p class="product-type">The Curated Gift Edit</p>
+      <h3 class="product-name" data-th="ของขวัญลักซ์ชัวรีสั่งทำพิเศษ">Bespoke Luxury Gift</h3>
+      <p class="product-price"><span class="from" data-th="สอบถามราคา">Price upon request</span></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 03 · Bespoke Moments -->
+<section class="products" id="moments">
+  <div class="section-header">
+    <div>
+      <p class="section-label">03 &mdash; Bespoke Moments</p>
+      <h2 class="section-title" data-th="โมเมนต์<em>ในแบบของคุณ</em>">Moments, <em>Made Yours</em></h2>
+      <p class="section-sub" data-th="บอกโอกาสพิเศษของคุณ — เราออกแบบดอกไม้ บรรยากาศ และความรู้สึกให้ทั้งหมด">Tell us the occasion — we design the flowers, the setting, the feeling.</p>
+    </div>
+    <a href="#contact" class="btn btn-outline" data-th="เล่าโอกาสของคุณ &rarr;">Tell Us More &rarr;</a>
+  </div>
+  <div class="moments-grid">
+
+    <a href="#contact" class="moment-item">
+      <h3 data-th="ขอแต่งงาน">Proposal</h3>
+      <p data-th="จัดฉากขอแต่งงานด้วยดอกไม้ในแบบของคุณ">A proposal set with flowers, styled entirely around your story.</p>
+    </a>
+
+    <a href="#contact" class="moment-item">
+      <h3 data-th="ครบรอบ">Anniversary</h3>
+      <p data-th="ฉลองอีกหนึ่งปีของเรา ด้วยสิ่งที่งดงาม">Celebrate another year of us — marked with something beautiful.</p>
+    </a>
+
+    <a href="#contact" class="moment-item">
+      <h3 data-th="วันเกิด">Birthday</h3>
+      <p data-th="ดอกไม้วันเกิดที่ออกแบบตามตัวตนของคนพิเศษ">Birthday flowers designed around the person, not the template.</p>
+    </a>
+
+    <a href="#contact" class="moment-item">
+      <h3 data-th="เด็กแรกเกิดและเด็กเล็ก">Baby &amp; Children</h3>
+      <p data-th="ช่อดอกไม้อ่อนโยนแสนน่ารัก สำหรับเด็กแรกเกิดและเด็กเล็ก">Soft, joyful arrangements for newborns and little ones.</p>
+    </a>
+
+    <a href="#contact" class="moment-item">
+      <h3 data-th="เซอร์ไพรส์สุดโรแมนติก">Romantic Surprises</h3>
+      <p data-th="เซอร์ไพรส์เต็มห้อง ท้ายรถ แสงเทียน — ที่เธอจะไม่มีวันลืม">Room fills, car boots, candlelight — surprises she'll never forget.</p>
+    </a>
+
+    <a href="#contact" class="moment-item">
+      <h3 data-th="งานองค์กรและแบรนด์">Corporate &amp; Brand Events</h3>
+      <p data-th="จัดดอกไม้สำหรับงานเปิดตัว อีเวนต์ และแบรนด์">Floral styling for launches, events, and brand moments.</p>
+    </a>
+
+    <a href="#contact" class="moment-item is-cta">
+      <h3 data-th="สร้างโมเมนต์ของคุณ">Create Your Moment</h3>
+      <p data-th="มีไอเดียอื่นในใจ? มาออกแบบด้วยกัน">Something else in mind? Let's design it together.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- Feature Split — About -->
+<div class="feature-split" id="about">
+  <div class="feature-img">
+    <img
+      src="https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=900&q=80"
+      alt="Our studio"
+    />
+  </div>
+  <div class="feature-content">
+    <p class="section-label" data-th="เรื่องราวของเรา">Our Story</p>
+    <h2 class="section-title" data-th="ดอกไม้ที่จัด<br/><em>ด้วยใจ</em>">Blooms crafted<br/><em>with intention</em></h2>
+    <div class="divider"></div>
+    <p class="section-sub" data-th="Rosewood & Ivy เกิดจากความรักในความงามที่เรียบหรู ตั้งอยู่ในกรุงเทพฯ เราจัดทุกช่อด้วยมือ — คัดเลือกเฉพาะดอกไม้สดใหม่ที่สุด ห่อด้วยความใส่ใจ ส่งด้วยความรัก">
+      Rosewood & Ivy was born from a love of quiet beauty. Based in Bangkok, we curate every bouquet by hand — selecting only the freshest stems, wrapped with care, delivered with love.
+    </p>
+    <p class="section-sub mt-8" style="margin-top:16px;" data-th="ไม่ว่าจะเป็นของขวัญสำหรับคนพิเศษ หรือช่วงเวลาที่คุณอยากบันทึกไว้ เราเชื่อว่าดอกไม้พูดในสิ่งที่บางครั้งคำพูดก็ทำไม่ได้">
+      Whether it's a gift for someone special or a moment you want to mark, we believe flowers speak what words sometimes cannot.
+    </p>
+    <div style="margin-top:40px; display:flex; gap:48px;">
+      <div>
+        <div style="font-family:var(--serif); font-size:40px; font-weight:300; color:var(--deep);">500+</div>
+        <div style="font-family:var(--sans); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--light);" data-th="ลูกค้าประทับใจ">Happy Clients</div>
+      </div>
+      <div>
+        <div style="font-family:var(--serif); font-size:40px; font-weight:300; color:var(--deep);">28</div>
+        <div style="font-family:var(--sans); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--light);" data-th="แบบดอกไม้">Arrangements</div>
+      </div>
+      <div>
+        <div style="font-family:var(--serif); font-size:40px; font-weight:300; color:var(--deep);">1</div>
+        <div style="font-family:var(--sans); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--light);" data-th="เมือง · กรุงเทพฯ">City · Bangkok</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Exclusive Section -->
+<section class="exclusive" id="exclusive">
+  <p class="section-label" data-th="บริการพรีเมียม">Premium Service</p>
+  <h2 class="section-title" data-th="ออเดอร์<em>พิเศษ</em>">Exclusive <em>Orders</em></h2>
+  <p class="section-sub" data-th="มีไอเดียในใจไหม? ส่งไอเดียของคุณมา เราจะสร้างสรรค์ของคุณโดยเฉพาะ">Have a vision? Share your idea and we'll craft something entirely yours.</p>
+  <a href="#contact" class="btn" style="background:var(--rose); color:white; margin-top:8px;" data-th="ส่งไอเดียของคุณ &rarr;">Share Your Idea &rarr;</a>
+
+  <div class="exclusive-grid">
+    <div class="exclusive-item">
+      <h3 data-th="ดอกไม้สั่งทำ">Bespoke Arrangements</h3>
+      <p data-th="ช่อดอกไม้ออกแบบเฉพาะตามโอกาส โทนสี และเรื่องราวของคุณ ไม่มีช่อใดเหมือนกัน">Fully custom bouquets designed around your occasion, color palette, and story. No two are alike.</p>
+    </div>
+    <div class="exclusive-item">
+      <h3 data-th="กระเช้าของขวัญและบิวตี้">Gift & Beauty Hampers</h3>
+      <p data-th="ดอกไม้คู่กับผลิตภัณฑ์ความงามแบรนด์หรู — Dior, Laneige และอีกมากมาย — รวมเป็นของขวัญที่ลืมไม่ลง">Flowers paired with luxury beauty products — Dior, Laneige, and more — curated as one unforgettable gift.</p>
+    </div>
+    <div class="exclusive-item">
+      <h3 data-th="ส่งวันเดียวกัน">Same-Day Delivery</h3>
+      <p data-th="สั่งก่อนเที่ยง ส่งภายในวันเดียวกันในกรุงเทพฯ เพราะบางช่วงเวลารอไม่ได้">Order before noon for same-day delivery within Bangkok. Because some moments can't wait.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="reviews">
+  <div class="section-header" style="justify-content:center; flex-direction:column; align-items:center; margin-bottom:16px;">
+    <p class="section-label" data-th="ลูกค้ากล่าวว่า">What They Say</p>
+    <h2 class="section-title" data-th="คนกรุงเทพฯ <em>หลงรัก</em>">Loved by <em>Bangkok</em></h2>
+    <p class="section-sub" style="margin:0 auto 28px;" data-th="คำพูดจริงจากลูกค้าจริง">Real words from real customers.</p>
+    <a href="#write-review" class="btn btn-outline" style="font-size:10px; padding:12px 32px;" data-th="&#9998; เขียนรีวิว">&#9998; Write a Review</a>
+  </div>
+
+  <!-- Average rating bar -->
+  <div id="ratingBar" style="text-align:center; margin:36px 0 48px; display:none;">
+    <div style="font-family:var(--serif); font-size:52px; font-weight:300; color:var(--deep); line-height:1;" id="avgScore">5.0</div>
+    <div style="font-size:22px; color:var(--rose); letter-spacing:4px; margin:4px 0;" id="avgStars">★★★★★</div>
+    <div style="font-family:var(--sans); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--light);" id="reviewCount">3 reviews</div>
+  </div>
+
+  <div class="testimonial-grid" id="testimonialGrid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text" data-th="&quot;ช่อเบบี้เบรธสวยมาก ใหญ่กว่าที่คิดและสดมาก เพื่อนร้องไห้เลยตอนที่ได้รับ&quot;">"The baby's breath bouquet was absolutely stunning. Bigger than I expected and incredibly fresh. My friend cried when she received it."</p>
+      <p class="testimonial-author" data-th="— ปิ่ม K., กรุงเทพฯ">— Pim K., Bangkok</p>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text" data-th="&quot;กระเช้า Dior x Rosewood เป็นของขวัญที่สวยที่สุดที่เคยให้มา ทั้งแพ็คเกจจิ้ง ดอกไม้ และผลิตภัณฑ์ — ทุกอย่างสมบูรณ์แบบ&quot;">"The Dior x Rosewood gift basket was the most beautiful thing I've ever gifted. Packaging, flowers, products — everything was perfect."</p>
+      <p class="testimonial-author" data-th="— มินท์ T., สีลม">— Mint T., Silom</p>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text" data-th="&quot;สั่งมาสามครั้งแล้ว ทุกช่อใส่ใจและดูเรียบหรู เป็นร้านดอกไม้เดียวที่จะใช้ในกรุงเทพฯ&quot;">"I've ordered three times now. Every single arrangement is thoughtful and elegant. This is the only florist I'll ever use in Bangkok."</p>
+      <p class="testimonial-author" data-th="— เฟิร์น P., เอกมัย">— Fern P., Ekkamai</p>
+    </div>
+  </div>
+</section>
+
+<!-- Review Form -->
+<div class="review-section" id="write-review">
+  <div style="text-align:center; margin-bottom:52px;">
+    <p class="section-label" data-th="แบ่งปันประสบการณ์">Share Your Experience</p>
+    <h2 class="section-title" data-th="เขียน<em>รีวิว</em>">Leave a <em>Review</em></h2>
+    <p class="section-sub" style="margin:0 auto;" data-th="คำพูดของคุณมีความหมายมากสำหรับเรา — และสำหรับลูกค้าในอนาคตที่กำลังตัดสินใจไว้วางใจให้เราดูแลช่วงเวลาพิเศษ">Your words mean everything to us — and to future customers deciding to trust us with their special moments.</p>
+  </div>
+
+  <div class="review-form-wrap">
+    <div class="review-success" id="reviewSuccess">
+      <div class="icon">&#x2665;</div>
+      <h3 data-th="ขอบคุณสำหรับคำพูดดี ๆ ของคุณ">Thank you for your kind words.</h3>
+      <p data-th="รีวิวของคุณถูกเพิ่มในหน้าเว็บของเราแล้ว">Your review has been added to our page.</p>
+    </div>
+
+    <form id="reviewForm" onsubmit="submitReview(event)">
+
+      <!-- Star rating -->
+      <div class="form-group">
+        <label style="display:block; font-family:var(--sans); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--light); margin-bottom:12px; font-weight:400;" data-th="ให้คะแนน *">Your Rating *</label>
+        <div class="star-picker" id="starPicker">
+          <label data-val="1" title="1 star">★</label>
+          <label data-val="2" title="2 stars">★</label>
+          <label data-val="3" title="3 stars">★</label>
+          <label data-val="4" title="4 stars">★</label>
+          <label data-val="5" title="5 stars">★</label>
+        </div>
+        <p class="star-hint" id="starHint" data-th="คลิกเพื่อให้คะแนน">Click to rate</p>
+        <input type="hidden" id="ratingValue" name="rating" value="" required />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label data-th="ชื่อของคุณ *">Your Name *</label>
+          <input type="text" id="reviewName" placeholder="Somsri P." data-th-placeholder="สมศรี ป." required />
+        </div>
+        <div class="form-group">
+          <label data-th="ย่าน (ไม่บังคับ)">Neighbourhood (optional)</label>
+          <input type="text" id="reviewLocation" placeholder="Thonglor, Ekkamai…" data-th-placeholder="ทองหล่อ, เอกมัย…" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label data-th="คุณสั่งช่อไหน?">Which arrangement did you order?</label>
+        <select id="reviewProduct">
+          <option value="" data-th="เลือก (ไม่บังคับ)">Select (optional)</option>
+          <option>Signature Cloud Bouquet</option>
+          <option>Signature White Bouquet</option>
+          <option>Dior-Inspired Edit</option>
+          <option>Peony Collection</option>
+          <option>20 Roses</option>
+          <option>50 Roses</option>
+          <option>101 Roses</option>
+          <option>Bespoke Rose Bouquet</option>
+          <option>Flowers &amp; Beauty</option>
+          <option>Flowers &amp; Eyewear</option>
+          <option>Flowers &amp; Fashion</option>
+          <option>Flowers &amp; Bags</option>
+          <option>Flowers &amp; More</option>
+          <option>Bespoke Luxury Gift</option>
+          <option>Bespoke Moment / Custom Order</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label data-th="รีวิวของคุณ *">Your Review *</label>
+        <textarea id="reviewText" placeholder="Tell us about your experience — the flowers, the delivery, how the recipient reacted…" data-th-placeholder="เล่าประสบการณ์ของคุณ — ดอกไม้ การจัดส่ง ปฏิกิริยาของผู้รับ…" required style="min-height:120px;"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-dark" style="width:100%;" data-th="ส่งรีวิว">Submit Review</button>
+    </form>
+  </div>
+</div>
+
+<!-- Reels -->
+<section class="reels" id="reels">
+  <div class="section-header">
+    <p class="section-label" data-th="ในเฟรม">In Motion</p>
+    <h2 class="section-title" data-th="<em>รีลส์</em>ล่าสุด">Recent <em>Reels</em></h2>
+    <p class="section-sub" style="margin:0 auto 28px;" data-th="เบื้องหลังของทุกช่อ — บันทึกจากสตูดิโอของเราในกรุงเทพฯ">Behind every bouquet — moments captured from our Bangkok studio.</p>
+    <a href="https://www.instagram.com/rosewoodandlvy/reels/" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:10px; padding:12px 32px;" data-th="ดูทั้งหมดใน Instagram &rarr;">Watch all on Instagram &rarr;</a>
+  </div>
+  <div class="reels-grid">
+    <div class="reel-card" data-reel="DX8mqqXRb3S" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DW2pz1PDziD" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DW0SywOkTYC" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWyKWfbj2--" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWyK6l_kQ7C" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWwOheXDyMM" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWqW5UCEQVu" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWjXYJ9kgSL" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWg9v6dkfvV" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWg7jtBDzEa" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWdaO8BkULE" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+    <div class="reel-card" data-reel="DWd2X1ZDzkD" onclick="loadReel(this)">
+      <div class="reel-placeholder">
+        <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="reel-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-th="ดูรีล">Watch Reel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<div class="gallery">
+  <div class="gallery-header">
+    <p class="section-label" data-th="ติดตามเรา">Follow Along</p>
+    <h2 class="section-title">@rosewoodandlvy</h2>
+    <p class="section-sub" style="margin:0 auto;" data-th="แท็กเราในช่วงเวลาของคุณ เราชอบเห็นดอกไม้ของเราไปอยู่ในบ้านใหม่">Tag us in your moments. We love seeing our blooms find their home.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=400&q=80" alt="Gallery 1" />
+      <div class="gallery-overlay">♡</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=400&q=80" alt="Gallery 2" onerror="this.src='https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80'" />
+      <div class="gallery-overlay">♡</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=400&q=80" alt="Gallery 3" />
+      <div class="gallery-overlay">♡</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80" alt="Gallery 4" />
+      <div class="gallery-overlay">♡</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1548460427-cef67dc2c9b5?w=400&q=80" alt="Gallery 5" />
+      <div class="gallery-overlay">♡</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1487530811015-780de6d83f9e?w=400&q=80" alt="Gallery 6" />
+      <div class="gallery-overlay">♡</div>
+    </div>
+  </div>
+</div>
+
+<!-- Newsletter -->
+<div class="newsletter">
+  <p class="section-label" data-th="อยู่ใกล้กัน">Stay Close</p>
+  <h2 class="section-title" data-th="สมัครรับ<em>ข่าวสารดอกไม้</em>">Join our <em>bloom list</em></h2>
+  <p class="section-sub" data-th="รับสิทธิ์เข้าถึงคอลเลกชันใหม่ก่อนใคร และส่วนลด 10% ในการสั่งซื้อครั้งแรก">Get early access to seasonal collections and 10% off your first order.</p>
+  <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+    <input type="email" placeholder="your@email.com" data-th-placeholder="อีเมลของคุณ" required />
+    <button type="submit" class="btn btn-dark" data-th="สมัครรับ">Subscribe</button>
+  </form>
+</div>
+
+<!-- Contact -->
+<div class="contact" id="contact">
+  <div class="contact-info">
+    <p class="section-label" data-th="ติดต่อเรา">Get In Touch</p>
+    <h2 class="section-title" data-th="จอง<em>ดอกไม้ของคุณ</em>">Reserve <em>your blooms</em></h2>
+    <p class="section-sub" data-th="ทักแชทเราใน Instagram หรือกรอกฟอร์ม เราจะตอบกลับภายในไม่กี่ชั่วโมง">DM us on Instagram or fill in the form. We'll get back to you within a few hours.</p>
+    <div class="contact-detail">
+      <p class="label">Instagram</p>
+      <p class="value">@rosewoodandlvy</p>
+    </div>
+    <div class="contact-detail">
+      <p class="label" data-th="ที่ตั้ง">Location</p>
+      <p class="value" data-th="กรุงเทพฯ ประเทศไทย">Bangkok, Thailand</p>
+    </div>
+    <div class="contact-detail">
+      <p class="label" data-th="เวลาทำการ">Hours</p>
+      <p class="value" data-th="ทุกวัน 9:00 – 20:00">Daily 9:00 – 20:00</p>
+    </div>
+    <div class="contact-detail">
+      <p class="label" data-th="การจัดส่ง">Delivery</p>
+      <p class="value" data-th="ส่งวันเดียวกันในกรุงเทพฯ">Same-day within Bangkok</p>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <p class="section-label" data-th="ฟอร์มสั่งซื้อ">Order Form</p>
+    <h2 class="section-title" style="font-size:28px; margin-bottom:32px;" data-th="<em>สั่งซื้อ</em>">Place an <em>order</em></h2>
+    <form onsubmit="handleOrder(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label data-th="ชื่อของคุณ">Your Name</label>
+          <input type="text" placeholder="Somsri P." data-th-placeholder="สมศรี ป." required />
+        </div>
+        <div class="form-group">
+          <label data-th="โทรศัพท์ / Line ID">Phone / Line ID</label>
+          <input type="text" placeholder="08X-XXX-XXXX" data-th-placeholder="08X-XXX-XXXX" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-th="ช่อดอกไม้">Arrangement</label>
+        <select>
+          <option value="" data-th="เลือกคอลเลกชัน...">Select a collection...</option>
+          <optgroup label="The Signature Collection">
+            <option>Signature Cloud Bouquet — ฿1,200</option>
+            <option>Signature White Bouquet — ฿1,500</option>
+            <option>Dior-Inspired Edit</option>
+            <option>Peony Collection — ฿2,800</option>
+          </optgroup>
+          <optgroup label="01 — The Rose Edit">
+            <option>20 Roses — ฿2,500</option>
+            <option>50 Roses — ฿4,900</option>
+            <option>101 Roses — ฿8,900</option>
+            <option>Bespoke Rose Bouquet</option>
+          </optgroup>
+          <optgroup label="02 — The Curated Gift Edit">
+            <option>Flowers &amp; Beauty — ฿4,500</option>
+            <option>Flowers &amp; Eyewear</option>
+            <option>Flowers &amp; Fashion</option>
+            <option>Flowers &amp; Bags</option>
+            <option>Flowers &amp; More</option>
+            <option>Bespoke Luxury Gift</option>
+          </optgroup>
+          <optgroup label="03 — Bespoke Moments">
+            <option>Proposal</option>
+            <option>Anniversary</option>
+            <option>Birthday</option>
+            <option>Baby &amp; Children</option>
+            <option>Romantic Surprise</option>
+            <option>Corporate &amp; Brand Event</option>
+            <option>Create Your Moment</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-th="วันส่งและที่อยู่">Delivery Date & Address</label>
+        <input type="text" placeholder="DD/MM/YYYY · Full delivery address in Bangkok" data-th-placeholder="วว/ดด/ปปปป · ที่อยู่จัดส่งในกรุงเทพฯ" />
+      </div>
+      <div class="form-group">
+        <label data-th="การ์ดข้อความ (ไม่บังคับ)">Message Card (optional)</label>
+        <textarea placeholder="Write a message to include with your flowers..." data-th-placeholder="เขียนข้อความที่จะแนบไปกับดอกไม้..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark" style="width:100%;" data-th="ส่งคำสั่งซื้อ">Send Order Request</button>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" style="color:var(--cream);">
+        Rosewood & Ivy
+        <span data-th="กรุงเทพฯ · ดอกไม้คัดสรร">Bangkok · Curated Blooms</span>
+      </a>
+      <p data-th="ดอกไม้คัดสรรด้วยความงดงามที่เรียบหรู ช่อดอกไม้ทำมือส่งทั่วกรุงเทพฯ ด้วยความรัก">Curated blooms with quiet elegance. Handcrafted arrangements delivered across Bangkok with love.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/rosewoodandlvy" target="_blank" title="Instagram">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 data-th="คอลเลกชัน">Collections</h4>
+      <ul>
+        <li><a href="#signature">The Signature Collection</a></li>
+        <li><a href="#rose-edit">01 &mdash; The Rose Edit</a></li>
+        <li><a href="#gift-edit">02 &mdash; The Curated Gift Edit</a></li>
+        <li><a href="#moments">03 &mdash; Bespoke Moments</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-th="ข้อมูล">Info</h4>
+      <ul>
+        <li><a href="#about" data-th="เกี่ยวกับเรา">About Us</a></li>
+        <li><a href="#contact" data-th="ติดต่อ">Contact</a></li>
+        <li><a href="#" data-th="ข้อมูลการจัดส่ง">Delivery Info</a></li>
+        <li><a href="#" data-th="วิธีดูแลดอกไม้">Care Guide</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-th="ติดต่อ">Contact</h4>
+      <ul>
+        <li><a href="https://instagram.com/rosewoodandlvy">@rosewoodandlvy</a></li>
+        <li><a href="#" data-th="กรุงเทพฯ ประเทศไทย">Bangkok, Thailand</a></li>
+        <li><a href="#" data-th="ทุกวัน 9:00 – 20:00">Daily 9:00 – 20:00</a></li>
+        <li><a href="#contact" data-th="ทักแชทเพื่อจอง">DM to Reserve</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-th="&copy; 2025 Rosewood & Ivy Bangkok สงวนลิขสิทธิ์">&copy; 2025 Rosewood & Ivy Bangkok. All rights reserved.</span>
+    <span data-th="ทำด้วยใจในกรุงเทพฯ &#x2665;">Crafted with care in Bangkok &#x2665;</span>
+  </div>
+</footer>
+
+<!-- Product Modal -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modalContent">
+    <div class="modal-img">
+      <img id="modalImg" src="" alt="" />
+    </div>
+    <div class="modal-info">
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">&#x2715;</button>
+      <p class="product-type" id="modalType"></p>
+      <h2 class="product-name" id="modalName"></h2>
+      <p class="modal-price" id="modalPrice"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-select form-group">
+        <label>Size</label>
+        <select>
+          <option>Standard</option>
+          <option>Large (+฿300)</option>
+          <option>Extra Large (+฿600)</option>
+        </select>
+      </div>
+      <a href="#contact" class="btn btn-dark" style="width:100%; text-align:center; display:block;" onclick="document.getElementById('modal').classList.remove('open')">Reserve This Arrangement</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setLang(lang) {
+    if (lang !== 'th' && lang !== 'en') lang = 'en';
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-th]').forEach(function (el) {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = lang === 'th' ? el.dataset.th : el.dataset.en;
+    });
+
+    document.querySelectorAll('[data-th-placeholder]').forEach(function (el) {
+      if (el.dataset.enPlaceholder === undefined) el.dataset.enPlaceholder = el.placeholder || '';
+      el.placeholder = lang === 'th' ? el.dataset.thPlaceholder : el.dataset.enPlaceholder;
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  (function () {
+    var saved = 'en';
+    try { saved = localStorage.getItem('lang') || 'en'; } catch (e) {}
+    if (saved === 'th') {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () { setLang('th'); });
+      } else {
+        setLang('th');
+      }
+    }
+  })();
+
+  function loadReel(card) {
+    if (card.dataset.loaded) return;
+    const id = card.dataset.reel;
+    if (!id) return;
+    card.dataset.loaded = '1';
+    card.classList.add('is-loaded');
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.instagram.com/reel/' + id + '/embed/';
+    iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.loading = 'lazy';
+    card.innerHTML = '';
+    card.appendChild(iframe);
+  }
+
+  const products = {
+    'signature-cloud': {
+      img: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=800&q=80',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Signature Collection',
+      name: 'Signature Cloud Bouquet',
+      price: 'From ฿1,200',
+      desc: 'A dreamy cascade of fresh baby\'s breath, wrapped in signature Rosewood & Ivy ivory paper with a hand-tied ribbon. Timeless, effortless, and utterly romantic. The bouquet that made us who we are.'
+    },
+    'signature-white': {
+      img: 'Image/collections/gift-edit/beauty-4.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Signature Collection',
+      name: 'Signature White Bouquet',
+      price: 'From ฿1,500',
+      desc: 'Cream and white blooms gathered in our signature wrapping — quiet, luminous, and impossible to overdo. Our most requested white bouquet, and the one we are known for.'
+    },
+    'dior-inspired': {
+      img: 'Image/collections/gift-edit/beauty-9.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Signature Collection',
+      name: 'Dior-Inspired Edit',
+      price: 'Price upon request',
+      desc: 'Our most photographed creation — fresh blooms designed around Dior beauty, from lip products to Miss Dior fragrance. Each piece is composed to order, in the palette and scale you choose.'
+    },
+    'peony': {
+      img: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Signature Collection',
+      name: 'Peony Collection',
+      price: 'From ฿2,800',
+      desc: 'Lush, full-bloom peonies in blush and cream — available seasonally. Each stem is handpicked for its fullness and fragrance. A truly luxurious gift that speaks volumes without a single word.'
+    },
+    'roses-20': {
+      img: 'Image/collections/gift-edit/beauty-1.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Rose Edit',
+      name: '20 Roses',
+      price: 'From ฿2,500',
+      desc: 'Twenty premium roses, hand-tied and finished in our signature wrapping. Generous without being grand — the number for the moments you want to say it properly.'
+    },
+    'roses-50': {
+      img: 'Image/collections/gift-edit/gift-4.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Rose Edit',
+      name: '50 Roses',
+      price: 'From ฿4,900',
+      desc: 'Fifty premium roses, hand-tied stem by stem and wrapped in the Rosewood & Ivy signature finish. Full, romantic, and beautifully weighted in the arms.'
+    },
+    'roses-101': {
+      img: 'Image/collections/gift-edit/beauty-7.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Rose Edit',
+      name: '101 Roses',
+      price: 'From ฿8,900',
+      desc: 'One hundred and one premium roses, hand-tied into a single breathtaking bouquet. This is the one that stops the room — reserved for proposals, milestones, and love that needs no explanation.'
+    },
+    'roses-bespoke': {
+      img: 'Image/collections/gift-edit/gift-5.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Rose Edit',
+      name: 'Bespoke Rose Bouquet',
+      price: 'Price upon request',
+      desc: 'Any colour, any count, any scale. Tell us the moment and we will hand-tie premium roses to match it, finished in signature wrapping and styled entirely around you.'
+    },
+    'gift-beauty': {
+      img: 'Image/collections/gift-edit/beauty-5.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Curated Gift Edit',
+      name: 'Flowers & Beauty',
+      price: 'From ฿4,500',
+      desc: 'Fresh blooms arranged around luxury beauty — Dior, Laneige, and the pieces she already loves. Presented in a woven basket or hatbox, curated as one unforgettable gift.'
+    },
+    'gift-eyewear': {
+      img: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Curated Gift Edit',
+      name: 'Flowers & Eyewear',
+      price: 'Price upon request',
+      desc: 'A designer pair, nested into fresh blooms and styled to be opened slowly. Bring us the eyewear or let us source it — we design the arrangement around the piece.'
+    },
+    'gift-fashion': {
+      img: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Curated Gift Edit',
+      name: 'Flowers & Fashion',
+      price: 'Price upon request',
+      desc: 'Flowers composed around a fashion piece — a scarf, a silk, something chosen with her in mind. The blooms are matched to the palette so the whole gift reads as one.'
+    },
+    'gift-bags': {
+      img: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Curated Gift Edit',
+      name: 'Flowers & Bags',
+      price: 'Price upon request',
+      desc: 'The bag she has been quietly wanting, presented in a bed of fresh blooms. Designed so the flowers frame the gift rather than compete with it.'
+    },
+    'gift-more': {
+      img: 'Image/collections/gift-edit/gift-2.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Curated Gift Edit',
+      name: 'Flowers & More',
+      price: 'Price upon request',
+      desc: 'Jewellery, watches, fine fragrance — whatever the gift, we build the flowers around it. Tell us what is inside the box and we will design the moment it arrives in.'
+    },
+    'gift-bespoke': {
+      img: 'Image/collections/gift-edit/beauty-3.jpg',
+      fallback: 'https://images.unsplash.com/photo-1490750967868-88df5691cc26?w=800&q=80',
+      type: 'The Curated Gift Edit',
+      name: 'Bespoke Luxury Gift',
+      price: 'Price upon request',
+      desc: 'A fully custom luxury hamper, built around any gift you choose. Share the occasion, the budget, and the brand — we source, arrange, and finish it entirely by hand.'
+    }
+  };
+
+  function openModal(key) {
+    const p = products[key];
+    if (!p) return;
+    const img = document.getElementById('modalImg');
+    img.src = p.img;
+    img.onerror = () => { img.src = p.fallback; };
+    img.alt = p.name;
+    document.getElementById('modalType').textContent = p.type;
+    document.getElementById('modalName').textContent = p.name;
+    document.getElementById('modalPrice').textContent = p.price;
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modal').classList.add('open');
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modal')) {
+      document.getElementById('modal').classList.remove('open');
+    }
+  }
+
+  function scrollToProducts() {
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function openMobileNav() {
+    document.getElementById('mobileNav').classList.add('open');
+  }
+
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Thank you!';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; e.target.reset(); }, 3000);
+  }
+
+  function handleOrder(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
+    btn.textContent = 'Request Sent! We\'ll contact you soon.';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; e.target.reset(); }, 4000);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') document.getElementById('modal').classList.remove('open');
+  });
+
+  /* ── REVIEW SYSTEM ── */
+  const STATIC_COUNT = 3;
+  const STATIC_TOTAL = 15; // 3 × 5 stars
+  let selectedRating = 0;
+
+  const starHints = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent ♡'];
+
+  // Star picker interaction
+  const starLabels = document.querySelectorAll('#starPicker label');
+
+  starLabels.forEach((lbl, i) => {
+    lbl.addEventListener('mouseenter', () => highlightStars(i + 1, false));
+    lbl.addEventListener('mouseleave', () => highlightStars(selectedRating, true));
+    lbl.addEventListener('click', () => {
+      selectedRating = i + 1;
+      document.getElementById('ratingValue').value = selectedRating;
+      highlightStars(selectedRating, true);
+      document.getElementById('starHint').textContent = starHints[selectedRating];
+    });
+  });
+
+  function highlightStars(n, persist) {
+    starLabels.forEach((lbl, i) => {
+      lbl.classList.toggle('selected', i < n);
+      lbl.style.color = i < n ? 'var(--rose)' : 'var(--border)';
+    });
+    if (!persist) {
+      document.getElementById('starHint').textContent = n ? starHints[n] : 'Click to rate';
+    }
+  }
+
+  // Build a card element from a review object
+  function buildCard(r, animate) {
+    const starsStr = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+    const card = document.createElement('div');
+    card.className = 'testimonial-card user-review' + (animate ? ' animating' : '');
+    const tag = r.product ? `<p class="review-tag">${r.product}</p>` : '';
+    const loc = r.location ? `, ${r.location}` : '';
+    card.innerHTML = `
+      <div class="stars" style="color:var(--rose);">${starsStr}</div>
+      ${tag}
+      <p class="testimonial-text">"${r.text}"</p>
+      <p class="testimonial-author">— ${r.name}${loc}</p>
+    `;
+    if (animate) card.addEventListener('animationend', () => card.classList.remove('animating'));
+    return card;
+  }
+
+  // Persist to localStorage
+  function saveReview(r) {
+    const all = JSON.parse(localStorage.getItem('ri_reviews') || '[]');
+    all.unshift(r);
+    localStorage.setItem('ri_reviews', JSON.stringify(all));
+    return all;
+  }
+
+  function loadReviews() {
+    return JSON.parse(localStorage.getItem('ri_reviews') || '[]');
+  }
+
+  // Update average rating bar
+  function updateRatingBar(reviews) {
+    const bar = document.getElementById('ratingBar');
+    const total = STATIC_TOTAL + reviews.reduce((s, r) => s + r.rating, 0);
+    const count = STATIC_COUNT + reviews.length;
+    const avg = (total / count).toFixed(1);
+    const rounded = Math.round(total / count);
+    document.getElementById('avgScore').textContent = avg;
+    document.getElementById('avgStars').textContent = '★'.repeat(rounded) + '☆'.repeat(5 - rounded);
+    document.getElementById('reviewCount').textContent = `${count} review${count !== 1 ? 's' : ''}`;
+    bar.style.display = 'block';
+  }
+
+  // Render saved reviews on page load
+  function renderSavedReviews() {
+    const reviews = loadReviews();
+    const grid = document.getElementById('testimonialGrid');
+    reviews.forEach(r => grid.prepend(buildCard(r, false)));
+    if (reviews.length > 0) updateRatingBar(reviews);
+  }
+
+  renderSavedReviews();
+
+  // Handle form submission
+  function submitReview(e) {
+    e.preventDefault();
+
+    if (!selectedRating) {
+      document.getElementById('starHint').textContent = 'Please select a star rating';
+      document.getElementById('starHint').style.color = 'var(--rose)';
+      return;
+    }
+
+    const r = {
+      rating:   selectedRating,
+      name:     document.getElementById('reviewName').value.trim(),
+      location: document.getElementById('reviewLocation').value.trim(),
+      product:  document.getElementById('reviewProduct').value,
+      text:     document.getElementById('reviewText').value.trim(),
+      date:     new Date().toISOString()
+    };
+
+    const allReviews = saveReview(r);
+    const grid = document.getElementById('testimonialGrid');
+    grid.prepend(buildCard(r, true));
+    updateRatingBar(allReviews);
+
+    // Show success state
+    document.getElementById('reviewForm').style.display = 'none';
+    const success = document.getElementById('reviewSuccess');
+    success.style.display = 'block';
+
+    // Scroll to grid so user sees their card
+    setTimeout(() => {
+      document.getElementById('reviews').scrollIntoView({ behavior: 'smooth' });
+    }, 400);
+
+    // Reset form after delay
+    setTimeout(() => {
+      success.style.display = 'none';
+      document.getElementById('reviewForm').style.display = 'block';
+      document.getElementById('reviewForm').reset();
+      selectedRating = 0;
+      highlightStars(0, true);
+      document.getElementById('ratingValue').value = '';
+      document.getElementById('starHint').textContent = 'Click to rate';
+      document.getElementById('starHint').style.color = '';
+    }, 3500);
+  }
+</script>
+</body>
+</html>
