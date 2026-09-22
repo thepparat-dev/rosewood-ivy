@@ -2625,6 +2625,19 @@
     fetch('content.json', { cache: 'no-cache' })
       .then(function (r) { return r.json(); })
       .then(function (c) {
+        function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+        // Rewrite a bilingual element: innerHTML carries EN, data-th carries TH,
+        // and the cached data-en must be dropped so setLang re-reads the new EN
+        function setBi(el, en, th) {
+          if (!el) return;
+          if (en) { el.innerHTML = esc(en); delete el.dataset.en; }
+          if (th) el.dataset.th = esc(th);
+        }
+        // Snapshot the built-in product names before any rename, so the
+        // hardcoded <option> texts can still be matched back to their keys
+        var origName = {};
+        for (var k in products) origName[products[k].name] = k;
+
         var heroImg = document.querySelector('.hero-image img');
         if (heroImg && c.hero && c.hero.image) heroImg.src = c.hero.image;
 
@@ -2651,26 +2664,92 @@
           if (entry.image && img) img.src = entry.image;
           var priceEl = card.querySelector('.product-price');
           if (priceEl) priceEl.innerHTML = fmtPriceHTML(entry.price);
+          setBi(card.querySelector('.product-name'), entry.name_en, entry.name_th);
           var p = products[m[1]];
           if (p) {
             if (entry.image) p.img = entry.image;
+            if (entry.name_en) p.name = entry.name_en;
+            if (entry.desc) p.desc = entry.desc;
             p.price = entry.price ? 'From ' + fmtBaht(entry.price) : 'Price upon request';
           }
         });
 
-        // Keep the order-form options in sync with the product prices
+        // Keep the order-form options in sync with the product names/prices
         document.querySelectorAll('.contact-form option').forEach(function (opt) {
           var base = opt.textContent.split(' — ')[0].trim();
-          for (var key in products) {
-            if (products[key].name === base) {
-              var entry = c.products && c.products[key];
-              opt.textContent = entry && entry.price ? base + ' — ' + fmtBaht(entry.price) : base;
-              break;
-            }
+          var key = origName[base];
+          var entry = key && c.products && c.products[key];
+          if (!entry) return;
+          var label = entry.name_en || base;
+          opt.textContent = entry.price ? label + ' — ' + fmtBaht(entry.price) : label;
+        });
+
+        // Review form's product dropdown uses the same names
+        document.querySelectorAll('#reviewProduct option').forEach(function (opt) {
+          var key = origName[opt.textContent.trim()];
+          var entry = key && c.products && c.products[key];
+          if (entry && entry.name_en) opt.textContent = entry.name_en;
+        });
+
+        // ── Editable texts (contact info + reviews) ──
+        var t = c.texts || {};
+
+        if (t.instagram) {
+          var handle = String(t.instagram).replace(/^@+/, '');
+          var at = '@' + handle;
+          document.querySelectorAll('a[href*="instagram.com/"]').forEach(function (a) {
+            a.setAttribute('href', a.getAttribute('href').replace(/instagram\.com\/[^/'"]+/, 'instagram.com/' + handle));
+            if (/^@/.test(a.textContent.trim())) a.textContent = at;
+          });
+          var gTitle = document.querySelector('.gallery-header .section-title');
+          if (gTitle && /^@/.test(gTitle.textContent.trim())) gTitle.textContent = at;
+          var ann = document.querySelector('.announcement');
+          if (ann) {
+            ann.innerHTML = ann.innerHTML.replace(/@[A-Za-z0-9._]+/, at);
+            delete ann.dataset.en;
+            if (ann.dataset.th) ann.dataset.th = ann.dataset.th.replace(/@[A-Za-z0-9._]+/, at);
+          }
+        }
+
+        // Contact block: the four detail values in page order (IG, location, hours, delivery)
+        var details = document.querySelectorAll('.contact-info .contact-detail .value');
+        if (details.length >= 4) {
+          if (t.instagram) details[0].textContent = '@' + String(t.instagram).replace(/^@+/, '');
+          setBi(details[1], t.location && t.location.en, t.location && t.location.th);
+          setBi(details[2], t.hours && t.hours.en, t.hours && t.hours.th);
+          setBi(details[3], t.delivery && t.delivery.en, t.delivery && t.delivery.th);
+        }
+
+        // Footer contact column mirrors the same values
+        var fcols = document.querySelectorAll('.footer-col');
+        if (fcols.length) {
+          var flinks = fcols[fcols.length - 1].querySelectorAll('ul li a');
+          if (flinks.length >= 3) {
+            if (t.instagram) flinks[0].textContent = '@' + String(t.instagram).replace(/^@+/, '');
+            setBi(flinks[1], t.location && t.location.en, t.location && t.location.th);
+            setBi(flinks[2], t.hours && t.hours.en, t.hours && t.hours.th);
+          }
+        }
+
+        // The three built-in testimonials (user-submitted ones are untouched)
+        var tCards = document.querySelectorAll('#testimonialGrid .testimonial-card:not(.user-review)');
+        ['r1', 'r2', 'r3'].forEach(function (rk, i) {
+          var r = t.reviews && t.reviews[rk];
+          var cardEl = tCards[i];
+          if (!r || !cardEl) return;
+          var txt = cardEl.querySelector('.testimonial-text');
+          var au = cardEl.querySelector('.testimonial-author');
+          if (txt) {
+            if (r.text_en) { txt.innerHTML = '"' + esc(r.text_en) + '"'; delete txt.dataset.en; }
+            if (r.text_th) txt.dataset.th = '"' + esc(r.text_th) + '"';
+          }
+          if (au) {
+            if (r.author_en) { au.innerHTML = '— ' + esc(r.author_en); delete au.dataset.en; }
+            if (r.author_th) au.dataset.th = '— ' + esc(r.author_th);
           }
         });
 
-        // Re-apply Thai labels to the price elements rewritten above
+        // Re-apply Thai labels to the elements rewritten above
         if (document.documentElement.lang === 'th') setLang('th');
       })
       .catch(function () {});

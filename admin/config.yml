@@ -60,84 +60,126 @@ collections:
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "ใส่เฉพาะตัวเลข เช่น 1200 — เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: signature-white
                 label: ช่อซิกเนเจอร์ไวท์ (Signature White Bouquet)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "ใส่เฉพาะตัวเลข เช่น 1500 — เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: dior-inspired
                 label: Dior-Inspired Edit
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: rose-collection
                 label: คอลเลกชันกุหลาบ (Rose Collection)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: roses-20
                 label: กุหลาบ 20 ดอก
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: roses-50
                 label: กุหลาบ 50 ดอก
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: roses-101
                 label: กุหลาบ 101 ดอก
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: roses-bespoke
                 label: ช่อกุหลาบสั่งทำพิเศษ (Custom Rose Bouquet)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: gift-beauty
                 label: ดอกไม้ & บิวตี้ (Flowers & Beauty)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: gift-eyewear
                 label: ดอกไม้ & แว่นตา (Flowers & Eyewear)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: gift-fashion
                 label: ดอกไม้ & แฟชั่น (Flowers & Fashion)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: gift-bags
                 label: ดอกไม้ & กระเป๋า (Flowers & Bags)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: gift-more
                 label: ดอกไม้ & จิวเวลรี่ (Flowers & Jewelry)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
               - name: gift-bespoke
                 label: ของขวัญลักซ์ชัวรีสั่งทำพิเศษ (Bespoke Luxury Gift)
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
                   - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+                  - { name: name_th, label: ชื่อสินค้า (ไทย), widget: string, required: false }
+                  - { name: name_en, label: ชื่อสินค้า (อังกฤษ), widget: string, required: false }
+                  - { name: desc, label: คำอธิบายในหน้าต่างรายละเอียด (อังกฤษ), widget: text, required: false }
 
           - name: about
             label: รูปส่วน "เรื่องราวของเรา"
@@ -156,3 +198,57 @@ collections:
               - { name: photo4, label: รูปที่ 4, widget: image }
               - { name: photo5, label: รูปที่ 5, widget: image }
               - { name: photo6, label: รูปที่ 6, widget: image }
+
+          - name: texts
+            label: ข้อความ (ติดต่อและรีวิว)
+            widget: object
+            collapsed: true
+            fields:
+              - { name: instagram, label: Instagram, widget: string, hint: "เช่น @rosewoodandlvy — เปลี่ยนแล้วลิงก์และชื่อบนเว็บอัปเดตทุกจุด" }
+              - name: location
+                label: ที่ตั้งร้าน
+                widget: object
+                fields:
+                  - { name: th, label: ภาษาไทย, widget: string, required: false }
+                  - { name: en, label: ภาษาอังกฤษ, widget: string, required: false }
+              - name: hours
+                label: เวลาทำการ
+                widget: object
+                fields:
+                  - { name: th, label: ภาษาไทย, widget: string, required: false }
+                  - { name: en, label: ภาษาอังกฤษ, widget: string, required: false }
+              - name: delivery
+                label: การจัดส่ง
+                widget: object
+                fields:
+                  - { name: th, label: ภาษาไทย, widget: string, required: false }
+                  - { name: en, label: ภาษาอังกฤษ, widget: string, required: false }
+              - name: reviews
+                label: รีวิวลูกค้า (3 อัน)
+                widget: object
+                collapsed: true
+                fields:
+                  - name: r1
+                    label: รีวิวที่ 1
+                    widget: object
+                    fields:
+                      - { name: text_th, label: ข้อความรีวิว (ไทย), widget: text, required: false }
+                      - { name: text_en, label: ข้อความรีวิว (อังกฤษ), widget: text, required: false }
+                      - { name: author_th, label: ผู้รีวิว (ไทย), widget: string, required: false, hint: "เช่น ปิ่ม K., กรุงเทพฯ" }
+                      - { name: author_en, label: ผู้รีวิว (อังกฤษ), widget: string, required: false, hint: "เช่น Pim K., Bangkok" }
+                  - name: r2
+                    label: รีวิวที่ 2
+                    widget: object
+                    fields:
+                      - { name: text_th, label: ข้อความรีวิว (ไทย), widget: text, required: false }
+                      - { name: text_en, label: ข้อความรีวิว (อังกฤษ), widget: text, required: false }
+                      - { name: author_th, label: ผู้รีวิว (ไทย), widget: string, required: false }
+                      - { name: author_en, label: ผู้รีวิว (อังกฤษ), widget: string, required: false }
+                  - name: r3
+                    label: รีวิวที่ 3
+                    widget: object
+                    fields:
+                      - { name: text_th, label: ข้อความรีวิว (ไทย), widget: text, required: false }
+                      - { name: text_en, label: ข้อความรีวิว (อังกฤษ), widget: text, required: false }
+                      - { name: author_th, label: ผู้รีวิว (ไทย), widget: string, required: false }
+                      - { name: author_en, label: ผู้รีวิว (อังกฤษ), widget: string, required: false }

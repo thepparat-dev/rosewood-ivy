@@ -19,59 +19,101 @@
   "products": {
     "signature-cloud": {
       "image": "Image/collections/stock/signature-cloud.jpg",
-      "price": 1200
+      "price": 1200,
+      "name_th": "ช่อคลาวด์ซิกเนเจอร์",
+      "name_en": "Signature Cloud Bouquet",
+      "desc": "A dreamy cloud of fresh baby's breath, delicately wrapped in our signature ivory paper and finished with a hand-tied ribbon. Soft, timeless, and quietly romantic — a signature expression of Rosewood & Ivy."
     },
     "signature-white": {
       "image": "Image/collections/gift-edit/beauty-4.jpg",
-      "price": 1500
+      "price": 1500,
+      "name_th": "ช่อซิกเนเจอร์ไวท์",
+      "name_en": "Signature White Bouquet",
+      "desc": "Cream and white blooms gathered in our signature wrapping — quiet, luminous, and impossible to overdo. Our most requested white bouquet, and the one we are known for."
     },
     "dior-inspired": {
       "image": "Image/collections/gift-edit/beauty-9.jpg",
-      "price": null
+      "price": null,
+      "name_th": "Dior-Inspired Edit",
+      "name_en": "Dior-Inspired Edit",
+      "desc": "Our most photographed creation — fresh blooms designed around Dior beauty, from lip products to Miss Dior fragrance. Each piece is composed to order, in the palette and scale you choose."
     },
     "rose-collection": {
       "image": "Image/collections/stock/rose-collection.jpg",
-      "price": 2800
+      "price": 2800,
+      "name_th": "คอลเลกชันกุหลาบ",
+      "name_en": "Rose Collection",
+      "desc": "Premium roses in soft blush and garden tones, hand-tied and finished in our signature wrapping. Each stem is chosen for its form and fragrance. A truly luxurious gift that speaks volumes without a single word."
     },
     "roses-20": {
       "image": "Image/collections/gift-edit/beauty-1.jpg",
-      "price": 2500
+      "price": 2500,
+      "name_th": "กุหลาบ 20 ดอก",
+      "name_en": "20 Roses",
+      "desc": "Twenty premium roses, hand-tied and finished in our signature wrapping. Generous without being grand — the number for the moments you want to say it properly."
     },
     "roses-50": {
       "image": "Image/collections/gift-edit/gift-4.jpg",
-      "price": 4900
+      "price": 4900,
+      "name_th": "กุหลาบ 50 ดอก",
+      "name_en": "50 Roses",
+      "desc": "Fifty premium roses, hand-tied stem by stem and wrapped in the Rosewood & Ivy signature finish. Full, romantic, and beautifully weighted in the arms."
     },
     "roses-101": {
       "image": "Image/collections/gift-edit/beauty-7.jpg",
-      "price": 8900
+      "price": 8900,
+      "name_th": "กุหลาบ 101 ดอก",
+      "name_en": "101 Roses",
+      "desc": "One hundred and one premium roses, hand-tied into a single breathtaking bouquet. This is the one that stops the room — reserved for proposals, milestones, and love that needs no explanation."
     },
     "roses-bespoke": {
       "image": "Image/collections/gift-edit/gift-5.jpg",
-      "price": null
+      "price": null,
+      "name_th": "ช่อกุหลาบสั่งทำพิเศษ",
+      "name_en": "Custom Rose Bouquet",
+      "desc": "Any colour, any count, any scale. Tell us the moment and we will hand-tie premium roses to match it, finished in signature wrapping and styled entirely around you."
     },
     "gift-beauty": {
       "image": "Image/collections/gift-edit/beauty-5.jpg",
-      "price": 4500
+      "price": 4500,
+      "name_th": "ดอกไม้ & บิวตี้",
+      "name_en": "Flowers & Beauty",
+      "desc": "Fresh blooms arranged around luxury beauty — Dior, Laneige, and the pieces she already loves. Presented in a woven basket or hatbox, curated as one unforgettable gift."
     },
     "gift-eyewear": {
       "image": "Image/collections/stock/gift-eyewear.jpg",
-      "price": null
+      "price": null,
+      "name_th": "ดอกไม้ & แว่นตา",
+      "name_en": "Flowers & Eyewear",
+      "desc": "A designer pair, nested into fresh blooms and styled to be opened slowly. Bring us the eyewear or let us source it — we design the arrangement around the piece."
     },
     "gift-fashion": {
       "image": "Image/collections/stock/gift-fashion.jpg",
-      "price": null
+      "price": null,
+      "name_th": "ดอกไม้ & แฟชั่น",
+      "name_en": "Flowers & Fashion",
+      "desc": "Flowers composed around a fashion piece — a scarf, a silk, something chosen with her in mind. The blooms are matched to the palette so the whole gift reads as one."
     },
     "gift-bags": {
       "image": "Image/collections/stock/gift-bags.jpg",
-      "price": null
+      "price": null,
+      "name_th": "ดอกไม้ & กระเป๋า",
+      "name_en": "Flowers & Bags",
+      "desc": "The bag she has been quietly wanting, presented in a bed of fresh blooms. Designed so the flowers frame the gift rather than compete with it."
     },
     "gift-more": {
       "image": "Image/collections/gift-edit/gift-2.jpg",
-      "price": null
+      "price": null,
+      "name_th": "ดอกไม้ & อื่น ๆ",
+      "name_en": "Flowers & Jewelry",
+      "desc": "Jewellery, watches, fine fragrance — whatever the gift, we build the flowers around it. Tell us what is inside the box and we will design the moment it arrives in."
     },
     "gift-bespoke": {
       "image": "Image/collections/gift-edit/beauty-3.jpg",
-      "price": null
+      "price": null,
+      "name_th": "ของขวัญลักซ์ชัวรีสั่งทำพิเศษ",
+      "name_en": "Bespoke Luxury Gift",
+      "desc": "A fully custom luxury hamper, built around any gift you choose. Share the occasion, the budget, and the brand — we source, arrange, and finish it entirely by hand."
     }
   },
   "about": {
@@ -84,5 +126,40 @@
     "photo4": "Image/collections/gift-edit/beauty-8.jpg",
     "photo5": "Image/collections/gift-edit/gift-3.jpg",
     "photo6": "Image/collections/gift-edit/beauty-2.jpg"
+  },
+  "texts": {
+    "instagram": "@rosewoodandlvy",
+    "location": {
+      "th": "กรุงเทพฯ ประเทศไทย",
+      "en": "Bangkok, Thailand"
+    },
+    "hours": {
+      "th": "ทุกวัน 9:00 – 20:00",
+      "en": "Daily 9:00 – 20:00"
+    },
+    "delivery": {
+      "th": "ส่งวันเดียวกันในกรุงเทพฯ",
+      "en": "Same-day within Bangkok"
+    },
+    "reviews": {
+      "r1": {
+        "text_th": "ช่อเบบี้เบรธสวยมาก ใหญ่กว่าที่คิดและสดมาก เพื่อนร้องไห้เลยตอนที่ได้รับ",
+        "text_en": "The baby's breath bouquet was absolutely stunning. Bigger than I expected and incredibly fresh. My friend cried when she received it.",
+        "author_th": "ปิ่ม K., กรุงเทพฯ",
+        "author_en": "Pim K., Bangkok"
+      },
+      "r2": {
+        "text_th": "กระเช้า Dior x Rosewood เป็นของขวัญที่สวยที่สุดที่เคยให้มา ทั้งแพ็คเกจจิ้ง ดอกไม้ และผลิตภัณฑ์ — ทุกอย่างสมบูรณ์แบบ",
+        "text_en": "The Dior x Rosewood gift basket was the most beautiful thing I've ever gifted. Packaging, flowers, products — everything was perfect.",
+        "author_th": "มินท์ T., สีลม",
+        "author_en": "Mint T., Silom"
+      },
+      "r3": {
+        "text_th": "สั่งมาสามครั้งแล้ว ทุกช่อใส่ใจและดูเรียบหรู เป็นร้านดอกไม้เดียวที่จะใช้ในกรุงเทพฯ",
+        "text_en": "I've ordered three times now. Every single arrangement is thoughtful and elegant. This is the only florist I'll ever use in Bangkok.",
+        "author_th": "เฟิร์น P., เอกมัย",
+        "author_en": "Fern P., Ekkamai"
+      }
+    }
   }
 }
