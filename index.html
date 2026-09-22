@@ -19,6 +19,9 @@
       --mid: #6b5b55;
       --light: #a89590;
       --border: #e2dbd6;
+      --swatch-white: #ffffff;
+      --swatch-blush: #f4b6c8;
+      --swatch-red: #b3121a;
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'Jost', 'Helvetica Neue', sans-serif;
     }
@@ -472,6 +475,36 @@
       color: var(--deep);
       margin-bottom: 4px;
     }
+
+    /* ── COLOUR SHADE SWATCHES (Rose Edit) ── */
+    .product-name-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .product-name-row .product-name { margin-bottom: 0; }
+
+    .product-swatches {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      line-height: 1;
+    }
+
+    .swatch {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(44, 36, 32, 0.12);
+    }
+
+    .swatch-white { background: var(--swatch-white); border-color: rgba(44, 36, 32, 0.25); }
+    .swatch-blush { background: var(--swatch-blush); }
+    .swatch-red   { background: var(--swatch-red); }
 
     .product-type {
       font-family: var(--sans);
@@ -1305,6 +1338,9 @@
       .newsletter-form { flex-direction: column; }
       .exclusive { padding: 60px 24px; }
       .hero-title em { display: block; }
+      .product-name-row { gap: 8px; }
+      .product-swatches { gap: 5px; }
+      .swatch { width: 18px; height: 18px; }
     }
 
     /* Narrow two-column band: force the italic phrase onto its own line so the
@@ -1533,7 +1569,7 @@
     <div>
       <p class="section-label">01 &mdash; The Rose Edit</p>
       <h2 class="section-title">The <em>Rose Edit</em></h2>
-      <p class="section-sub" data-th="กุหลาบในจำนวนที่บอกความรู้สึกได้ดีที่สุด">Roses in the number that says it best.</p>
+      <p class="section-sub" data-th="คอลเลกชันกุหลาบเหนือกาลเวลา จัดอย่างพิถีพิถันเพื่อทุกการบอกรัก">A timeless collection of roses, thoughtfully arranged for every expression of love.</p>
     </div>
     <a href="#contact" class="btn btn-outline" data-th="สอบถาม &rarr;">Enquire &rarr;</a>
   </div>
@@ -1545,7 +1581,15 @@
         <button class="product-add" data-th="จองเลย">Reserve Now</button>
       </div>
       <p class="product-type">The Rose Edit</p>
-      <h3 class="product-name" data-th="กุหลาบ 20 ดอก">20 Roses</h3>
+      <!-- Client request: colour-shade circles on the three rose-count cards only (not Bespoke) -->
+      <div class="product-name-row">
+        <h3 class="product-name" data-th="กุหลาบ 20 ดอก">20 Roses</h3>
+        <span class="product-swatches" role="img" aria-label="Available in white, blush pink and deep red">
+          <span class="swatch swatch-white" title="White" aria-hidden="true"></span>
+          <span class="swatch swatch-blush" title="Blush pink" aria-hidden="true"></span>
+          <span class="swatch swatch-red" title="Deep red" aria-hidden="true"></span>
+        </span>
+      </div>
       <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿2,500</p>
     </div>
 
@@ -1555,7 +1599,14 @@
         <button class="product-add" data-th="จองเลย">Reserve Now</button>
       </div>
       <p class="product-type">The Rose Edit</p>
-      <h3 class="product-name" data-th="กุหลาบ 50 ดอก">50 Roses</h3>
+      <div class="product-name-row">
+        <h3 class="product-name" data-th="กุหลาบ 50 ดอก">50 Roses</h3>
+        <span class="product-swatches" role="img" aria-label="Available in white, blush pink and deep red">
+          <span class="swatch swatch-white" title="White" aria-hidden="true"></span>
+          <span class="swatch swatch-blush" title="Blush pink" aria-hidden="true"></span>
+          <span class="swatch swatch-red" title="Deep red" aria-hidden="true"></span>
+        </span>
+      </div>
       <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿4,900</p>
     </div>
 
@@ -1566,7 +1617,14 @@
         <button class="product-add" data-th="จองเลย">Reserve Now</button>
       </div>
       <p class="product-type">The Rose Edit</p>
-      <h3 class="product-name" data-th="กุหลาบ 101 ดอก">101 Roses</h3>
+      <div class="product-name-row">
+        <h3 class="product-name" data-th="กุหลาบ 101 ดอก">101 Roses</h3>
+        <span class="product-swatches" role="img" aria-label="Available in white, blush pink and deep red">
+          <span class="swatch swatch-white" title="White" aria-hidden="true"></span>
+          <span class="swatch swatch-blush" title="Blush pink" aria-hidden="true"></span>
+          <span class="swatch swatch-red" title="Deep red" aria-hidden="true"></span>
+        </span>
+      </div>
       <p class="product-price"><span class="from" data-th="เริ่มต้น">From</span> ฿8,900</p>
     </div>
 
