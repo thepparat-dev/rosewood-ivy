@@ -1,0 +1,159 @@
+backend:
+  name: github
+  repo: thepparat-dev/rosewood-ivy
+  branch: main
+  # TODO (ขั้นตอนตั้งค่า): ใส่ URL ของ Cloudflare Worker (sveltia-cms-auth) ที่ deploy แล้ว
+  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+
+site_url: https://thepparat-dev.github.io/rosewood-ivy
+
+media_folder: Image/uploads
+public_folder: Image/uploads
+
+collections:
+  - name: site
+    label: เนื้อหาเว็บไซต์
+    files:
+      - name: content
+        label: รูปภาพและราคา
+        file: content.json
+        fields:
+          - name: hero
+            label: รูปหน้าปก (Hero)
+            widget: object
+            fields:
+              - { name: image, label: รูปใหญ่หน้าแรก, widget: image }
+
+          - name: collections
+            label: แถบคอลเลกชัน (4 รูป)
+            widget: object
+            collapsed: true
+            fields:
+              - name: signature
+                label: The Signature Collection
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+              - name: rose-edit
+                label: 01 · The Rose Edit
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+              - name: gift-edit
+                label: 02 · The Curated Gift Edit
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+              - name: moments
+                label: 03 · Bespoke Moments
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+
+          - name: products
+            label: สินค้า (รูปและราคา)
+            widget: object
+            collapsed: true
+            fields:
+              - name: signature-cloud
+                label: ช่อคลาวด์ซิกเนเจอร์ (Signature Cloud Bouquet)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "ใส่เฉพาะตัวเลข เช่น 1200 — เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: signature-white
+                label: ช่อซิกเนเจอร์ไวท์ (Signature White Bouquet)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "ใส่เฉพาะตัวเลข เช่น 1500 — เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: dior-inspired
+                label: Dior-Inspired Edit
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: rose-collection
+                label: คอลเลกชันกุหลาบ (Rose Collection)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: roses-20
+                label: กุหลาบ 20 ดอก
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: roses-50
+                label: กุหลาบ 50 ดอก
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: roses-101
+                label: กุหลาบ 101 ดอก
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: roses-bespoke
+                label: ช่อกุหลาบสั่งทำพิเศษ (Custom Rose Bouquet)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: gift-beauty
+                label: ดอกไม้ & บิวตี้ (Flowers & Beauty)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: gift-eyewear
+                label: ดอกไม้ & แว่นตา (Flowers & Eyewear)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: gift-fashion
+                label: ดอกไม้ & แฟชั่น (Flowers & Fashion)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: gift-bags
+                label: ดอกไม้ & กระเป๋า (Flowers & Bags)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: gift-more
+                label: ดอกไม้ & จิวเวลรี่ (Flowers & Jewelry)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+              - name: gift-bespoke
+                label: ของขวัญลักซ์ชัวรีสั่งทำพิเศษ (Bespoke Luxury Gift)
+                widget: object
+                fields:
+                  - { name: image, label: รูป, widget: image }
+                  - { name: price, label: ราคาเริ่มต้น (บาท), widget: number, value_type: int, required: false, hint: "เว้นว่างถ้าต้องการให้แสดงว่า 'สอบถามราคา'" }
+
+          - name: about
+            label: รูปส่วน "เรื่องราวของเรา"
+            widget: object
+            fields:
+              - { name: image, label: รูป, widget: image }
+
+          - name: gallery
+            label: แกลเลอรี Instagram (6 รูป)
+            widget: object
+            collapsed: true
+            fields:
+              - { name: photo1, label: รูปที่ 1, widget: image }
+              - { name: photo2, label: รูปที่ 2, widget: image }
+              - { name: photo3, label: รูปที่ 3, widget: image }
+              - { name: photo4, label: รูปที่ 4, widget: image }
+              - { name: photo5, label: รูปที่ 5, widget: image }
+              - { name: photo6, label: รูปที่ 6, widget: image }

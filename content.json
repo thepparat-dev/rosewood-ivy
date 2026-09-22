@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "image": "Image/collections/hero/white-roses-basket.jpg"
+  },
+  "collections": {
+    "signature": { "image": "Image/collections/gift-edit/beauty-4.jpg" },
+    "rose-edit": { "image": "Image/collections/gift-edit/gift-5.jpg" },
+    "gift-edit": { "image": "Image/collections/gift-edit/beauty-5.jpg" },
+    "moments": { "image": "Image/collections/gift-edit/beauty-6.jpg" }
+  },
+  "products": {
+    "signature-cloud": { "image": "Image/collections/stock/signature-cloud.jpg", "price": 1200 },
+    "signature-white": { "image": "Image/collections/gift-edit/beauty-4.jpg", "price": 1500 },
+    "dior-inspired": { "image": "Image/collections/gift-edit/beauty-9.jpg", "price": null },
+    "rose-collection": { "image": "Image/collections/stock/rose-collection.jpg", "price": 2800 },
+    "roses-20": { "image": "Image/collections/gift-edit/beauty-1.jpg", "price": 2500 },
+    "roses-50": { "image": "Image/collections/gift-edit/gift-4.jpg", "price": 4900 },
+    "roses-101": { "image": "Image/collections/gift-edit/beauty-7.jpg", "price": 8900 },
+    "roses-bespoke": { "image": "Image/collections/gift-edit/gift-5.jpg", "price": null },
+    "gift-beauty": { "image": "Image/collections/gift-edit/beauty-5.jpg", "price": 4500 },
+    "gift-eyewear": { "image": "Image/collections/stock/gift-eyewear.jpg", "price": null },
+    "gift-fashion": { "image": "Image/collections/stock/gift-fashion.jpg", "price": null },
+    "gift-bags": { "image": "Image/collections/stock/gift-bags.jpg", "price": null },
+    "gift-more": { "image": "Image/collections/gift-edit/gift-2.jpg", "price": null },
+    "gift-bespoke": { "image": "Image/collections/gift-edit/beauty-3.jpg", "price": null }
+  },
+  "about": {
+    "image": "Image/collections/gift-edit/beauty-4.jpg"
+  },
+  "gallery": {
+    "photo1": "Image/collections/gift-edit/gift-1.jpg",
+    "photo2": "Image/collections/gift-edit/beauty-6.jpg",
+    "photo3": "Image/collections/stock/gallery-3.jpg",
+    "photo4": "Image/collections/gift-edit/beauty-8.jpg",
+    "photo5": "Image/collections/gift-edit/gift-3.jpg",
+    "photo6": "Image/collections/gift-edit/beauty-2.jpg"
+  }
+}
