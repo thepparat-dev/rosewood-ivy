@@ -1307,6 +1307,12 @@
       .hero-title em { display: block; }
     }
 
+    /* Narrow two-column band: force the italic phrase onto its own line so the
+       headline never breaks mid-phrase after "to" */
+    @media (min-width: 901px) and (max-width: 940px) {
+      .hero-title em { display: block; }
+    }
+
     /* ── MOBILE NAV ── */
     .mobile-nav {
       position: fixed;
