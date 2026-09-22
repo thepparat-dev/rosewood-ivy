@@ -2,8 +2,7 @@ backend:
   name: github
   repo: thepparat-dev/rosewood-ivy
   branch: main
-  # TODO (ขั้นตอนตั้งค่า): ใส่ URL ของ Cloudflare Worker (sveltia-cms-auth) ที่ deploy แล้ว
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  base_url: https://sveltia-cms-auth.ioinwwaoi.workers.dev
 
 site_url: https://thepparat-dev.github.io/rosewood-ivy
 
