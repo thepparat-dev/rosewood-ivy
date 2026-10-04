@@ -1,7 +1,7 @@
 # คู่มือแก้ไขเว็บไซต์ Rosewood & Ivy (สำหรับเจ้าของร้าน)
 
-เว็บไซต์: https://thepparat-dev.github.io/rosewood-ivy/
-หน้าแก้ไข: **https://thepparat-dev.github.io/rosewood-ivy/admin/**
+เว็บไซต์: https://rosethailand.com/
+หน้าแก้ไข: **https://rosethailand.com/admin/**
 
 ## เข้าสู่ระบบ
 
