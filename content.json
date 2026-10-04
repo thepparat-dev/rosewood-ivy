@@ -7,7 +7,7 @@
       "image": "Image/collections/gift-edit/beauty-4.jpg"
     },
     "rose-edit": {
-      "image": "Image/collections/gift-edit/gift-5.jpg"
+      "image": "/Image/uploads/IMG_1334.jpg"
     },
     "gift-edit": {
       "image": "Image/collections/gift-edit/beauty-5.jpg"
@@ -19,8 +19,8 @@
   "products": {
     "signature-cloud": {
       "image": "Image/collections/stock/signature-cloud.jpg",
-      "price": 1200,
-      "name_th": "ช่อคลาวด์ซิกเนเจอร์",
+      "price": 2500,
+      "name_th": "ช่อกุหลาบ",
       "name_en": "Signature Cloud Bouquet",
       "desc": "A dreamy cloud of fresh baby's breath, delicately wrapped in our signature ivory paper and finished with a hand-tied ribbon. Soft, timeless, and quietly romantic — a signature expression of Rosewood & Ivy."
     },
