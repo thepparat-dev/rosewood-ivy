@@ -2072,6 +2072,20 @@
     card.appendChild(iframe);
   }
 
+  // Embed every reel automatically as it nears the viewport (no click needed)
+  (function () {
+    const cards = document.querySelectorAll('.reel-card[data-reel]');
+    if (!('IntersectionObserver' in window)) { cards.forEach(loadReel); return; }
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        loadReel(en.target);
+      });
+    }, { rootMargin: '600px 0px' });
+    cards.forEach(function (c) { io.observe(c); });
+  })();
+
   const products = {
     'signature-cloud': {
       img: 'Image/collections/stock/signature-cloud.jpg',
