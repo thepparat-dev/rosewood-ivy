@@ -1341,6 +1341,25 @@
       .product-name-row { gap: 8px; }
       .product-swatches { gap: 5px; }
       .swatch { width: 18px; height: 18px; }
+
+      /* Compact header: one-line logo, no tagline / Order Now (hamburger covers nav) */
+      .announcement { font-size: 10px; letter-spacing: 1.5px; padding: 8px 12px; }
+      .header-top { padding: 0 16px; height: 60px; gap: 10px; }
+      .logo { font-size: 15px; letter-spacing: 1.5px; white-space: nowrap; }
+      .logo span { display: none; }
+      .header-actions { gap: 12px; }
+      .header-actions .btn { display: none; }
+      .lang-toggle { padding: 3px 4px; gap: 2px; }
+      .lang-btn { padding: 4px 8px; letter-spacing: 1px; }
+      .social-row { gap: 12px; }
+      .feature-content { padding: 48px 24px; }
+      .story-stats { flex-wrap: wrap; gap: 24px 32px !important; }
+    }
+
+    @media (max-width: 360px) {
+      .logo { font-size: 13px; letter-spacing: 1px; }
+      .header-actions { gap: 10px; }
+      .social-row { gap: 10px; }
     }
 
     /* Narrow two-column band: force the italic phrase onto its own line so the
@@ -1785,7 +1804,7 @@
     <p class="section-sub mt-8" style="margin-top:16px;" data-th="ไม่ว่าจะเป็นของขวัญสำหรับคนพิเศษ หรือช่วงเวลาที่คุณอยากบันทึกไว้ เราเชื่อว่าดอกไม้พูดในสิ่งที่บางครั้งคำพูดก็ทำไม่ได้">
       Whether it's a gift for someone special or a moment you want to mark, we believe flowers speak what words sometimes cannot.
     </p>
-    <div style="margin-top:40px; display:flex; gap:48px;">
+    <div class="story-stats" style="margin-top:40px; display:flex; gap:48px;">
       <div>
         <div style="font-family:var(--serif); font-size:40px; font-weight:300; color:var(--deep);">500+</div>
         <div style="font-family:var(--sans); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--light);" data-th="ลูกค้าประทับใจ">Happy Clients</div>
