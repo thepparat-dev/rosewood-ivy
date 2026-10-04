@@ -1838,20 +1838,22 @@
   <div class="contact-form">
     <p class="section-label" data-th="ฟอร์มสั่งซื้อ">Order Form</p>
     <h2 class="section-title" style="font-size:28px; margin-bottom:32px;" data-th="<em>สั่งซื้อ</em>">Place an <em>order</em></h2>
-    <form onsubmit="handleOrder(event)">
+    <form id="orderForm" onsubmit="handleOrder(event)">
+      <!-- honeypot: real customers never see or fill this; bots do -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
       <div class="form-row">
         <div class="form-group">
           <label data-th="ชื่อของคุณ">Your Name</label>
-          <input type="text" placeholder="Somsri P." data-th-placeholder="สมศรี ป." required />
+          <input type="text" name="name" placeholder="Somsri P." data-th-placeholder="สมศรี ป." required />
         </div>
         <div class="form-group">
           <label data-th="โทรศัพท์ / Line ID">Phone / Line ID</label>
-          <input type="text" placeholder="08X-XXX-XXXX" data-th-placeholder="08X-XXX-XXXX" required />
+          <input type="text" name="contact" placeholder="08X-XXX-XXXX" data-th-placeholder="08X-XXX-XXXX" required />
         </div>
       </div>
       <div class="form-group">
         <label data-th="ช่อดอกไม้">Arrangement</label>
-        <select>
+        <select name="arrangement">
           <option value="" data-th="เลือกคอลเลกชัน...">Select a collection...</option>
           <optgroup label="The Signature Collection">
             <option>Signature Cloud Bouquet — ฿1,200</option>
@@ -1886,11 +1888,11 @@
       </div>
       <div class="form-group">
         <label data-th="วันส่งและที่อยู่">Delivery Date & Address</label>
-        <input type="text" placeholder="DD/MM/YYYY · Full delivery address in Bangkok" data-th-placeholder="วว/ดด/ปปปป · ที่อยู่จัดส่งในกรุงเทพฯ" />
+        <input type="text" name="delivery" placeholder="DD/MM/YYYY · Full delivery address in Bangkok" data-th-placeholder="วว/ดด/ปปปป · ที่อยู่จัดส่งในกรุงเทพฯ" />
       </div>
       <div class="form-group">
         <label data-th="การ์ดข้อความ (ไม่บังคับ)">Message Card (optional)</label>
-        <textarea placeholder="Write a message to include with your flowers..." data-th-placeholder="เขียนข้อความที่จะแนบไปกับดอกไม้..."></textarea>
+        <textarea name="message" placeholder="Write a message to include with your flowers..." data-th-placeholder="เขียนข้อความที่จะแนบไปกับดอกไม้..."></textarea>
       </div>
       <button type="submit" class="btn btn-dark" style="width:100%;" data-th="ส่งคำสั่งซื้อ">Send Order Request</button>
     </form>
@@ -2185,13 +2187,38 @@
     document.getElementById('mobileNav').classList.remove('open');
   }
 
-  function handleOrder(e) {
+  /* Order form → Google Apps Script web app (bound to the shop's "RoseThailand" Google Sheet).
+     The script emails the shop and logs the order to a Google Sheet.
+     If the script is redeployed as a NEW deployment, paste its new "…/exec" URL here. */
+  const ORDER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzg1uiFHaIIwd_e36WObfHzR8XlbpzK8JtytVTUPrKRiav8v84OCx1FMVVS_NQg_im_vg/exec';
+
+  async function handleOrder(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    const orig = btn.textContent;
-    btn.textContent = 'Request Sent! We\'ll contact you soon.';
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const th = document.documentElement.lang === 'th';
+    const orig = btn.innerHTML;
+    const done = (msg, reset) => {
+      btn.textContent = msg;
+      setTimeout(() => { btn.innerHTML = orig; btn.disabled = false; if (reset) form.reset(); }, 5000);
+    };
+
     btn.disabled = true;
-    setTimeout(() => { btn.textContent = orig; btn.disabled = false; e.target.reset(); }, 4000);
+    btn.textContent = th ? 'กำลังส่ง…' : 'Sending…';
+
+    const data = new URLSearchParams(new FormData(form));
+    data.set('lang', th ? 'th' : 'en');
+    try {
+      if (!ORDER_ENDPOINT) throw new Error('ORDER_ENDPOINT not set');
+      const res = await fetch(ORDER_ENDPOINT, { method: 'POST', body: data });
+      const out = await res.json();
+      if (!out.ok) throw new Error(out.error || 'failed');
+      done(th ? 'ได้รับคำสั่งซื้อแล้ว เราจะติดต่อกลับเร็ว ๆ นี้' : "Request Sent! We'll contact you soon.", true);
+    } catch (err) {
+      console.error('Order submit failed:', err);
+      // Keep what the customer typed so they can retry or copy it into LINE
+      done(th ? 'ส่งไม่สำเร็จ กรุณาทัก LINE @936haoss' : "Couldn't send — please message us on LINE @936haoss", false);
+    }
   }
 
   document.addEventListener('keydown', (e) => {
