@@ -583,52 +583,6 @@
       margin-bottom: 40px;
     }
 
-    /* ── EXCLUSIVE ── */
-    .exclusive {
-      background: var(--deep);
-      color: var(--cream);
-      text-align: center;
-      padding: 100px 80px;
-    }
-
-    .exclusive .section-label { color: var(--rose); }
-
-    .exclusive .section-title { color: var(--cream); }
-
-    .exclusive .section-sub {
-      color: rgba(250,248,245,0.65);
-      margin: 0 auto 48px;
-    }
-
-    .exclusive-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-top: 64px;
-      text-align: left;
-    }
-
-    .exclusive-item {
-      border-top: 1px solid rgba(255,255,255,0.15);
-      padding-top: 28px;
-    }
-
-    .exclusive-item h3 {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 300;
-      color: var(--cream);
-      margin-bottom: 12px;
-    }
-
-    .exclusive-item p {
-      font-family: var(--sans);
-      font-size: 13px;
-      color: rgba(250,248,245,0.55);
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
     /* ── BESPOKE MOMENTS ── */
     .moments-grid {
       display: grid;
@@ -1316,7 +1270,6 @@
       .feature-split { grid-template-columns: 1fr; }
       .feature-img { height: 50vh; }
       .feature-content { padding: 48px 32px; }
-      .exclusive-grid { grid-template-columns: 1fr; gap: 28px; }
       .testimonial-grid { grid-template-columns: 1fr; }
       .reels { padding: 60px 32px; }
       .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -1339,7 +1292,6 @@
       .footer-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .newsletter-form { flex-direction: column; }
-      .exclusive { padding: 60px 24px; }
       .hero-title em { display: block; }
       .product-name-row { gap: 8px; }
       .product-swatches { gap: 5px; }
@@ -1435,7 +1387,6 @@
       <a href="#collections" data-th="คอลเลกชัน">Collections</a>
       <a href="#products" data-th="ร้านค้า">Shop</a>
       <a href="#moments" data-th="โมเมนต์พิเศษ">Moments</a>
-      <a href="#exclusive" data-th="พิเศษ">Exclusive</a>
       <a href="#reels" data-th="รีลส์">Reels</a>
       <a href="#about" data-th="เกี่ยวกับเรา">About</a>
       <a href="#contact" data-th="ติดต่อ">Contact</a>
@@ -1468,7 +1419,6 @@
   <a href="#collections" onclick="closeMobileNav()" data-th="คอลเลกชัน">Collections</a>
   <a href="#products" onclick="closeMobileNav()" data-th="ร้านค้า">Shop</a>
   <a href="#moments" onclick="closeMobileNav()" data-th="โมเมนต์พิเศษ">Moments</a>
-  <a href="#exclusive" onclick="closeMobileNav()" data-th="พิเศษ">Exclusive</a>
   <a href="#reels" onclick="closeMobileNav()" data-th="รีลส์">Reels</a>
   <a href="#about" onclick="closeMobileNav()" data-th="เกี่ยวกับเรา">About</a>
   <a href="#contact" onclick="closeMobileNav()" data-th="ติดต่อ">Contact</a>
@@ -1487,7 +1437,7 @@
     </p>
     <div class="hero-btns">
       <a href="#products" class="btn btn-dark" data-th="ชมคอลเลกชัน">Shop the Collection</a>
-      <a href="#exclusive" class="btn btn-outline" data-th="สั่งทำพิเศษ">Bespoke Order</a>
+      <a href="#contact" class="btn btn-outline" data-th="สั่งทำพิเศษ">Bespoke Order</a>
     </div>
   </div>
   <div class="hero-image">
@@ -1823,29 +1773,6 @@
     </div>
   </div>
 </div>
-
-<!-- Exclusive Section -->
-<section class="exclusive" id="exclusive">
-  <p class="section-label" data-th="บริการพรีเมียม">Premium Service</p>
-  <h2 class="section-title" data-th="ออเดอร์<em>พิเศษ</em>">Exclusive <em>Orders</em></h2>
-  <p class="section-sub" data-th="มีไอเดียในใจไหม? ส่งไอเดียของคุณมา เราจะสร้างสรรค์ของคุณโดยเฉพาะ">Have a vision? Share your idea and we'll craft something entirely yours.</p>
-  <a href="#contact" class="btn" style="background:var(--rose); color:white; margin-top:8px;" data-th="ส่งไอเดียของคุณ &rarr;">Share Your Idea &rarr;</a>
-
-  <div class="exclusive-grid">
-    <div class="exclusive-item">
-      <h3 data-th="ดอกไม้สั่งทำ">Bespoke Arrangements</h3>
-      <p data-th="ช่อดอกไม้ออกแบบเฉพาะตามโอกาส โทนสี และเรื่องราวของคุณ ไม่มีช่อใดเหมือนกัน">Fully custom bouquets designed around your occasion, color palette, and story. No two are alike.</p>
-    </div>
-    <div class="exclusive-item">
-      <h3 data-th="กระเช้าของขวัญและบิวตี้">Gift & Beauty Hampers</h3>
-      <p data-th="ดอกไม้คู่กับผลิตภัณฑ์ความงามแบรนด์หรู — Dior, Laneige และอีกมากมาย — รวมเป็นของขวัญที่ลืมไม่ลง">Flowers paired with luxury beauty products — Dior, Laneige, and more — curated as one unforgettable gift.</p>
-    </div>
-    <div class="exclusive-item">
-      <h3 data-th="ส่งวันเดียวกัน">Same-Day Delivery</h3>
-      <p data-th="สั่งก่อนเที่ยง ส่งภายในวันเดียวกันในกรุงเทพฯ เพราะบางช่วงเวลารอไม่ได้">Order before noon for same-day delivery within Bangkok. Because some moments can't wait.</p>
-    </div>
-  </div>
-</section>
 
 <!-- Testimonials -->
 <section class="testimonials" id="reviews">
