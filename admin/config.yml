@@ -205,6 +205,10 @@ collections:
             collapsed: true
             fields:
               - { name: instagram, label: Instagram, widget: string, hint: "เช่น @rosewoodandlvy — เปลี่ยนแล้วลิงก์และชื่อบนเว็บอัปเดตทุกจุด" }
+              - { name: line, label: LINE OA, widget: string, required: false, hint: "เช่น @936haoss — เปลี่ยนแล้วลิงก์ LINE บนเว็บอัปเดตทุกจุด" }
+              - { name: email, label: อีเมล, widget: string, required: false, hint: "เช่น hello@rosethailand.com — เว้นว่างไว้จะแสดงเป็น —" }
+              - { name: facebook, label: Facebook, widget: string, required: false, hint: "ลิงก์เพจ เช่น https://www.facebook.com/rosewoodandivy — เว้นว่างไว้จะแสดงเป็น —" }
+              - { name: phone, label: เบอร์โทร, widget: string, required: false, hint: "เช่น 08X-XXX-XXXX — เว้นว่างไว้จะแสดงเป็น —" }
               - name: location
                 label: ที่ตั้งร้าน
                 widget: object

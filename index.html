@@ -1070,6 +1070,9 @@
       color: var(--cream);
     }
 
+    .contact-detail .value a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    .contact-detail .value a[href]:hover { color: var(--blush); }
+
     .contact-form {
       background: var(--warm-white);
       padding: 80px;
@@ -2141,6 +2144,22 @@
       <p class="label" data-th="การจัดส่ง">Delivery</p>
       <p class="value" data-th="ส่งวันเดียวกันในกรุงเทพฯ">Same-day within Bangkok</p>
     </div>
+    <div class="contact-detail">
+      <p class="label">LINE</p>
+      <p class="value"><a id="contactLine" href="https://line.me/R/ti/p/@936haoss" target="_blank" rel="noopener">@936haoss</a></p>
+    </div>
+    <div class="contact-detail">
+      <p class="label" data-th="อีเมล">Email</p>
+      <p class="value"><a id="contactEmail">&mdash;</a></p>
+    </div>
+    <div class="contact-detail">
+      <p class="label">Facebook</p>
+      <p class="value"><a id="contactFacebook" target="_blank" rel="noopener">&mdash;</a></p>
+    </div>
+    <div class="contact-detail">
+      <p class="label" data-th="โทรศัพท์">Phone</p>
+      <p class="value"><a id="contactPhone">&mdash;</a></p>
+    </div>
   </div>
 
   <div class="contact-form">
@@ -2742,6 +2761,31 @@
           setBi(details[2], t.hours && t.hours.en, t.hours && t.hours.th);
           setBi(details[3], t.delivery && t.delivery.en, t.delivery && t.delivery.th);
         }
+
+        // Extra contact rows (LINE / Email / Facebook / Phone); empty values show a dash
+        function setContact(id, text, href) {
+          var a = document.getElementById(id);
+          if (!a) return;
+          a.textContent = text || '—';
+          if (text && href) a.setAttribute('href', href); else a.removeAttribute('href');
+        }
+        if (t.line) {
+          var lineId = '@' + String(t.line).trim().replace(/^@+/, '');
+          var lineUrl = 'https://line.me/R/ti/p/' + lineId;
+          document.querySelectorAll('a[href*="line.me/"]').forEach(function (a) { a.setAttribute('href', lineUrl); });
+          document.querySelectorAll('a[href*="line.me/"]').forEach(function (a) {
+            if (/LINE/.test(a.title || '')) a.title = 'LINE ' + lineId;
+            if (/^LINE: /.test(a.textContent)) a.textContent = 'LINE: ' + lineId;
+          });
+          setContact('contactLine', lineId, lineUrl);
+        }
+        var email = String(t.email || '').trim();
+        setContact('contactEmail', email, 'mailto:' + email);
+        var fb = String(t.facebook || '').trim();
+        var fbUrl = /^https?:\/\//.test(fb) ? fb : 'https://www.facebook.com/' + fb.replace(/^@+/, '');
+        setContact('contactFacebook', fb.replace(/^https?:\/\/(www\.|m\.)?/, '').replace(/\/$/, ''), fbUrl);
+        var phone = String(t.phone || '').trim();
+        setContact('contactPhone', phone, 'tel:' + phone.replace(/[^\d+]/g, ''));
 
         // Footer contact column mirrors the same values
         var fcols = document.querySelectorAll('.footer-col');
