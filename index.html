@@ -636,163 +636,53 @@
 
     .moment-item.is-cta p { color: rgba(250,248,245,0.8); }
 
-    /* ── TESTIMONIALS ── */
+    /* ── REVIEWS (photo wall, images managed in /admin) ── */
     .testimonials {
       background: var(--cream);
       text-align: center;
     }
 
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-top: 56px;
-      text-align: left;
+    .review-wall {
+      columns: 4 240px;
+      column-gap: 20px;
+      margin-top: 48px;
     }
 
-    .testimonial-card {
+    .review-shot {
+      display: block;
+      width: 100%;
+      margin: 0 0 20px;
+      padding: 0;
       border: 1px solid var(--border);
-      padding: 36px;
-    }
-
-    .stars {
-      color: var(--rose);
-      font-size: 13px;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-text {
-      font-family: var(--serif);
-      font-size: 17px;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.7;
-      color: var(--deep);
-      margin-bottom: 20px;
-    }
-
-    .testimonial-author {
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--light);
-      font-weight: 400;
-    }
-
-    .testimonial-card.user-review {
-      border-color: var(--rose);
-      position: relative;
-    }
-
-    .testimonial-card.user-review::before {
-      content: 'Verified Customer';
-      position: absolute;
-      top: -1px;
-      right: 20px;
-      background: var(--rose);
-      color: white;
-      font-family: var(--sans);
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      font-weight: 400;
-    }
-
-    .review-tag {
-      font-family: var(--sans);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--light);
-      margin-bottom: 6px;
-      font-weight: 300;
-    }
-
-    @keyframes cardIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .testimonial-card.animating { animation: cardIn 0.5s ease forwards; }
-
-    /* ── REVIEW FORM ── */
-    .review-section {
       background: var(--warm-white);
-      padding: 80px;
+      cursor: zoom-in;
+      break-inside: avoid;
     }
 
-    .review-form-wrap {
-      max-width: 680px;
-      margin: 0 auto;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      padding: 52px;
-    }
+    .review-shot img { display: block; width: 100%; height: auto; }
 
-    .star-picker {
+    .review-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(44,36,32,0.92);
       display: flex;
-      gap: 6px;
-      margin-bottom: 4px;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      cursor: zoom-out;
     }
 
-    .star-picker input[type="radio"] { display: none; }
+    .review-lightbox.open { opacity: 1; pointer-events: all; }
 
-    .star-picker label {
-      font-size: 28px;
-      color: var(--border);
-      cursor: pointer;
-      transition: color 0.15s, transform 0.15s;
-      line-height: 1;
-    }
+    .review-lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-    .star-picker label:hover,
-    .star-picker label.selected {
-      color: var(--rose);
-      transform: scale(1.15);
-    }
-
-    .star-hint {
-      font-family: var(--sans);
-      font-size: 11px;
-      color: var(--light);
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-      font-weight: 300;
-      min-height: 16px;
-    }
-
-    .review-success {
-      display: none;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .review-success .icon {
-      font-size: 40px;
-      margin-bottom: 16px;
-    }
-
-    .review-success h3 {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 300;
-      color: var(--deep);
-      margin-bottom: 8px;
-    }
-
-    .review-success p {
-      font-family: var(--sans);
-      font-size: 13px;
-      color: var(--light);
-      font-weight: 300;
-    }
-
-    @media (max-width: 900px) {
-      .review-section { padding: 60px 32px; }
-      .review-form-wrap { padding: 36px 24px; }
+    @media (max-width: 600px) {
+      .review-wall { columns: 2; column-gap: 12px; margin-top: 32px; }
+      .review-shot { margin-bottom: 12px; }
     }
 
     /* ── REELS ── */
@@ -1270,7 +1160,6 @@
       .feature-split { grid-template-columns: 1fr; }
       .feature-img { height: 50vh; }
       .feature-content { padding: 48px 32px; }
-      .testimonial-grid { grid-template-columns: 1fr; }
       .reels { padding: 60px 32px; }
       .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .reel-card.is-loaded { min-height: 640px; }
@@ -1774,113 +1663,18 @@
   </div>
 </div>
 
-<!-- Testimonials -->
-<section class="testimonials" id="reviews">
+<!-- Reviews: photo wall filled from content.json (review_images); hidden until the shop uploads some -->
+<section class="testimonials" id="reviews" hidden>
   <div class="section-header" style="justify-content:center; flex-direction:column; align-items:center; margin-bottom:16px;">
     <p class="section-label" data-th="ลูกค้ากล่าวว่า">What They Say</p>
     <h2 class="section-title" data-th="คนกรุงเทพฯ <em>หลงรัก</em>">Loved by <em>Bangkok</em></h2>
-    <p class="section-sub" style="margin:0 auto 28px;" data-th="คำพูดจริงจากลูกค้าจริง">Real words from real customers.</p>
-    <a href="#write-review" class="btn btn-outline" style="font-size:10px; padding:12px 32px;" data-th="&#9998; เขียนรีวิว">&#9998; Write a Review</a>
+    <p class="section-sub" style="margin:0 auto;" data-th="รีวิวจริงจากลูกค้าจริง">Real reviews from real customers.</p>
   </div>
-
-  <!-- Average rating bar -->
-  <div id="ratingBar" style="text-align:center; margin:36px 0 48px; display:none;">
-    <div style="font-family:var(--serif); font-size:52px; font-weight:300; color:var(--deep); line-height:1;" id="avgScore">5.0</div>
-    <div style="font-size:22px; color:var(--rose); letter-spacing:4px; margin:4px 0;" id="avgStars">★★★★★</div>
-    <div style="font-family:var(--sans); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--light);" id="reviewCount">3 reviews</div>
-  </div>
-
-  <div class="testimonial-grid" id="testimonialGrid">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="testimonial-text" data-th="&quot;ช่อเบบี้เบรธสวยมาก ใหญ่กว่าที่คิดและสดมาก เพื่อนร้องไห้เลยตอนที่ได้รับ&quot;">"The baby's breath bouquet was absolutely stunning. Bigger than I expected and incredibly fresh. My friend cried when she received it."</p>
-      <p class="testimonial-author" data-th="— ปิ่ม K., กรุงเทพฯ">— Pim K., Bangkok</p>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="testimonial-text" data-th="&quot;กระเช้า Dior x Rosewood เป็นของขวัญที่สวยที่สุดที่เคยให้มา ทั้งแพ็คเกจจิ้ง ดอกไม้ และผลิตภัณฑ์ — ทุกอย่างสมบูรณ์แบบ&quot;">"The Dior x Rosewood gift basket was the most beautiful thing I've ever gifted. Packaging, flowers, products — everything was perfect."</p>
-      <p class="testimonial-author" data-th="— มินท์ T., สีลม">— Mint T., Silom</p>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="testimonial-text" data-th="&quot;สั่งมาสามครั้งแล้ว ทุกช่อใส่ใจและดูเรียบหรู เป็นร้านดอกไม้เดียวที่จะใช้ในกรุงเทพฯ&quot;">"I've ordered three times now. Every single arrangement is thoughtful and elegant. This is the only florist I'll ever use in Bangkok."</p>
-      <p class="testimonial-author" data-th="— เฟิร์น P., เอกมัย">— Fern P., Ekkamai</p>
-    </div>
-  </div>
+  <div class="review-wall" id="reviewWall"></div>
 </section>
 
-<!-- Review Form -->
-<div class="review-section" id="write-review">
-  <div style="text-align:center; margin-bottom:52px;">
-    <p class="section-label" data-th="แบ่งปันประสบการณ์">Share Your Experience</p>
-    <h2 class="section-title" data-th="เขียน<em>รีวิว</em>">Leave a <em>Review</em></h2>
-    <p class="section-sub" style="margin:0 auto;" data-th="คำพูดของคุณมีความหมายมากสำหรับเรา — และสำหรับลูกค้าในอนาคตที่กำลังตัดสินใจไว้วางใจให้เราดูแลช่วงเวลาพิเศษ">Your words mean everything to us — and to future customers deciding to trust us with their special moments.</p>
-  </div>
-
-  <div class="review-form-wrap">
-    <div class="review-success" id="reviewSuccess">
-      <div class="icon">&#x2665;</div>
-      <h3 data-th="ขอบคุณสำหรับคำพูดดี ๆ ของคุณ">Thank you for your kind words.</h3>
-      <p data-th="รีวิวของคุณถูกเพิ่มในหน้าเว็บของเราแล้ว">Your review has been added to our page.</p>
-    </div>
-
-    <form id="reviewForm" onsubmit="submitReview(event)">
-
-      <!-- Star rating -->
-      <div class="form-group">
-        <label style="display:block; font-family:var(--sans); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--light); margin-bottom:12px; font-weight:400;" data-th="ให้คะแนน *">Your Rating *</label>
-        <div class="star-picker" id="starPicker">
-          <label data-val="1" title="1 star">★</label>
-          <label data-val="2" title="2 stars">★</label>
-          <label data-val="3" title="3 stars">★</label>
-          <label data-val="4" title="4 stars">★</label>
-          <label data-val="5" title="5 stars">★</label>
-        </div>
-        <p class="star-hint" id="starHint" data-th="คลิกเพื่อให้คะแนน">Click to rate</p>
-        <input type="hidden" id="ratingValue" name="rating" value="" required />
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label data-th="ชื่อของคุณ *">Your Name *</label>
-          <input type="text" id="reviewName" placeholder="Somsri P." data-th-placeholder="สมศรี ป." required />
-        </div>
-        <div class="form-group">
-          <label data-th="ย่าน (ไม่บังคับ)">Neighbourhood (optional)</label>
-          <input type="text" id="reviewLocation" placeholder="Thonglor, Ekkamai…" data-th-placeholder="ทองหล่อ, เอกมัย…" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label data-th="คุณสั่งช่อไหน?">Which arrangement did you order?</label>
-        <select id="reviewProduct">
-          <option value="" data-th="เลือก (ไม่บังคับ)">Select (optional)</option>
-          <option>Signature Cloud Bouquet</option>
-          <option>Signature White Bouquet</option>
-          <option>Dior-Inspired Edit</option>
-          <option>Rose Collection</option>
-          <option>20 Roses</option>
-          <option>50 Roses</option>
-          <option>101 Roses</option>
-          <option>Custom Rose Bouquet</option>
-          <option>Flowers &amp; Beauty</option>
-          <option>Flowers &amp; Eyewear</option>
-          <option>Flowers &amp; Fashion</option>
-          <option>Flowers &amp; Bags</option>
-          <option>Flowers &amp; Jewelry</option>
-          <option>Bespoke Luxury Gift</option>
-          <option>Bespoke Moment / Custom Order</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label data-th="รีวิวของคุณ *">Your Review *</label>
-        <textarea id="reviewText" placeholder="Tell us about your experience — the flowers, the delivery, how the recipient reacted…" data-th-placeholder="เล่าประสบการณ์ของคุณ — ดอกไม้ การจัดส่ง ปฏิกิริยาของผู้รับ…" required style="min-height:120px;"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-dark" style="width:100%;" data-th="ส่งรีวิว">Submit Review</button>
-    </form>
-  </div>
+<div class="review-lightbox" id="reviewLightbox" onclick="this.classList.remove('open')">
+  <img alt="" />
 </div>
 
 <!-- Reels -->
@@ -2443,138 +2237,12 @@
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') document.getElementById('modal').classList.remove('open');
+    if (e.key === 'Escape') {
+      document.getElementById('modal').classList.remove('open');
+      document.getElementById('reviewLightbox').classList.remove('open');
+    }
   });
 
-  /* ── REVIEW SYSTEM ── */
-  const STATIC_COUNT = 3;
-  const STATIC_TOTAL = 15; // 3 × 5 stars
-  let selectedRating = 0;
-
-  const starHints = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent ♡'];
-
-  // Star picker interaction
-  const starLabels = document.querySelectorAll('#starPicker label');
-
-  starLabels.forEach((lbl, i) => {
-    lbl.addEventListener('mouseenter', () => highlightStars(i + 1, false));
-    lbl.addEventListener('mouseleave', () => highlightStars(selectedRating, true));
-    lbl.addEventListener('click', () => {
-      selectedRating = i + 1;
-      document.getElementById('ratingValue').value = selectedRating;
-      highlightStars(selectedRating, true);
-      document.getElementById('starHint').textContent = starHints[selectedRating];
-    });
-  });
-
-  function highlightStars(n, persist) {
-    starLabels.forEach((lbl, i) => {
-      lbl.classList.toggle('selected', i < n);
-      lbl.style.color = i < n ? 'var(--rose)' : 'var(--border)';
-    });
-    if (!persist) {
-      document.getElementById('starHint').textContent = n ? starHints[n] : 'Click to rate';
-    }
-  }
-
-  // Build a card element from a review object
-  function buildCard(r, animate) {
-    const starsStr = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-    const card = document.createElement('div');
-    card.className = 'testimonial-card user-review' + (animate ? ' animating' : '');
-    const tag = r.product ? `<p class="review-tag">${r.product}</p>` : '';
-    const loc = r.location ? `, ${r.location}` : '';
-    card.innerHTML = `
-      <div class="stars" style="color:var(--rose);">${starsStr}</div>
-      ${tag}
-      <p class="testimonial-text">"${r.text}"</p>
-      <p class="testimonial-author">— ${r.name}${loc}</p>
-    `;
-    if (animate) card.addEventListener('animationend', () => card.classList.remove('animating'));
-    return card;
-  }
-
-  // Persist to localStorage
-  function saveReview(r) {
-    const all = JSON.parse(localStorage.getItem('ri_reviews') || '[]');
-    all.unshift(r);
-    localStorage.setItem('ri_reviews', JSON.stringify(all));
-    return all;
-  }
-
-  function loadReviews() {
-    return JSON.parse(localStorage.getItem('ri_reviews') || '[]');
-  }
-
-  // Update average rating bar
-  function updateRatingBar(reviews) {
-    const bar = document.getElementById('ratingBar');
-    const total = STATIC_TOTAL + reviews.reduce((s, r) => s + r.rating, 0);
-    const count = STATIC_COUNT + reviews.length;
-    const avg = (total / count).toFixed(1);
-    const rounded = Math.round(total / count);
-    document.getElementById('avgScore').textContent = avg;
-    document.getElementById('avgStars').textContent = '★'.repeat(rounded) + '☆'.repeat(5 - rounded);
-    document.getElementById('reviewCount').textContent = `${count} review${count !== 1 ? 's' : ''}`;
-    bar.style.display = 'block';
-  }
-
-  // Render saved reviews on page load
-  function renderSavedReviews() {
-    const reviews = loadReviews();
-    const grid = document.getElementById('testimonialGrid');
-    reviews.forEach(r => grid.prepend(buildCard(r, false)));
-    if (reviews.length > 0) updateRatingBar(reviews);
-  }
-
-  renderSavedReviews();
-
-  // Handle form submission
-  function submitReview(e) {
-    e.preventDefault();
-
-    if (!selectedRating) {
-      document.getElementById('starHint').textContent = 'Please select a star rating';
-      document.getElementById('starHint').style.color = 'var(--rose)';
-      return;
-    }
-
-    const r = {
-      rating:   selectedRating,
-      name:     document.getElementById('reviewName').value.trim(),
-      location: document.getElementById('reviewLocation').value.trim(),
-      product:  document.getElementById('reviewProduct').value,
-      text:     document.getElementById('reviewText').value.trim(),
-      date:     new Date().toISOString()
-    };
-
-    const allReviews = saveReview(r);
-    const grid = document.getElementById('testimonialGrid');
-    grid.prepend(buildCard(r, true));
-    updateRatingBar(allReviews);
-
-    // Show success state
-    document.getElementById('reviewForm').style.display = 'none';
-    const success = document.getElementById('reviewSuccess');
-    success.style.display = 'block';
-
-    // Scroll to grid so user sees their card
-    setTimeout(() => {
-      document.getElementById('reviews').scrollIntoView({ behavior: 'smooth' });
-    }, 400);
-
-    // Reset form after delay
-    setTimeout(() => {
-      success.style.display = 'none';
-      document.getElementById('reviewForm').style.display = 'block';
-      document.getElementById('reviewForm').reset();
-      selectedRating = 0;
-      highlightStars(0, true);
-      document.getElementById('ratingValue').value = '';
-      document.getElementById('starHint').textContent = 'Click to rate';
-      document.getElementById('starHint').style.color = '';
-    }, 3500);
-  }
 </script>
 
 <script>
@@ -2653,14 +2321,7 @@
           opt.textContent = entry.price ? label + ' — ' + fmtBaht(entry.price) : label;
         });
 
-        // Review form's product dropdown uses the same names
-        document.querySelectorAll('#reviewProduct option').forEach(function (opt) {
-          var key = origName[opt.textContent.trim()];
-          var entry = key && c.products && c.products[key];
-          if (entry && entry.name_en) opt.textContent = entry.name_en;
-        });
-
-        // ── Editable texts (contact info + reviews) ──
+        // ── Editable texts (contact info) ──
         var t = c.texts || {};
 
         if (t.instagram) {
@@ -2725,23 +2386,29 @@
           }
         }
 
-        // The three built-in testimonials (user-submitted ones are untouched)
-        var tCards = document.querySelectorAll('#testimonialGrid .testimonial-card:not(.user-review)');
-        ['r1', 'r2', 'r3'].forEach(function (rk, i) {
-          var r = t.reviews && t.reviews[rk];
-          var cardEl = tCards[i];
-          if (!r || !cardEl) return;
-          var txt = cardEl.querySelector('.testimonial-text');
-          var au = cardEl.querySelector('.testimonial-author');
-          if (txt) {
-            if (r.text_en) { txt.innerHTML = '"' + esc(r.text_en) + '"'; delete txt.dataset.en; }
-            if (r.text_th) txt.dataset.th = '"' + esc(r.text_th) + '"';
-          }
-          if (au) {
-            if (r.author_en) { au.innerHTML = '— ' + esc(r.author_en); delete au.dataset.en; }
-            if (r.author_th) au.dataset.th = '— ' + esc(r.author_th);
-          }
-        });
+        // Review photo wall (list of uploaded images, newest first as ordered in /admin)
+        var shots = (c.review_images || []).filter(function (r) { return r && r.image; });
+        var wall = document.getElementById('reviewWall');
+        if (wall && shots.length) {
+          shots.forEach(function (r) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'review-shot';
+            var img = document.createElement('img');
+            img.src = r.image;
+            img.alt = r.caption || 'Customer review';
+            img.loading = 'lazy';
+            b.appendChild(img);
+            b.addEventListener('click', function () {
+              var lb = document.getElementById('reviewLightbox');
+              lb.querySelector('img').src = r.image;
+              lb.querySelector('img').alt = img.alt;
+              lb.classList.add('open');
+            });
+            wall.appendChild(b);
+          });
+          document.getElementById('reviews').hidden = false;
+        }
 
         // Re-apply Thai labels to the elements rewritten above
         if (document.documentElement.lang === 'th') setLang('th');

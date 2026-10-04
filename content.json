@@ -144,26 +144,7 @@
     "delivery": {
       "th": "ส่งวันเดียวกันในกรุงเทพฯ",
       "en": "Same-day within Bangkok"
-    },
-    "reviews": {
-      "r1": {
-        "text_th": "ช่อเบบี้เบรธสวยมาก ใหญ่กว่าที่คิดและสดมาก เพื่อนร้องไห้เลยตอนที่ได้รับ",
-        "text_en": "The baby's breath bouquet was absolutely stunning. Bigger than I expected and incredibly fresh. My friend cried when she received it.",
-        "author_th": "ปิ่ม K., กรุงเทพฯ",
-        "author_en": "Pim K., Bangkok"
-      },
-      "r2": {
-        "text_th": "กระเช้า Dior x Rosewood เป็นของขวัญที่สวยที่สุดที่เคยให้มา ทั้งแพ็คเกจจิ้ง ดอกไม้ และผลิตภัณฑ์ — ทุกอย่างสมบูรณ์แบบ",
-        "text_en": "The Dior x Rosewood gift basket was the most beautiful thing I've ever gifted. Packaging, flowers, products — everything was perfect.",
-        "author_th": "มินท์ T., สีลม",
-        "author_en": "Mint T., Silom"
-      },
-      "r3": {
-        "text_th": "สั่งมาสามครั้งแล้ว ทุกช่อใส่ใจและดูเรียบหรู เป็นร้านดอกไม้เดียวที่จะใช้ในกรุงเทพฯ",
-        "text_en": "I've ordered three times now. Every single arrangement is thoughtful and elegant. This is the only florist I'll ever use in Bangkok.",
-        "author_th": "เฟิร์น P., เอกมัย",
-        "author_en": "Fern P., Ekkamai"
-      }
     }
-  }
+  },
+  "review_images": []
 }
