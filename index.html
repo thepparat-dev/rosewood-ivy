@@ -996,16 +996,23 @@
 
     .footer-social {
       display: flex;
-      gap: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .footer-social a {
-      color: rgba(250,248,245,0.4);
-      font-size: 18px;
-      transition: color 0.2s;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(201,169,154,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rose);
+      transition: color 0.2s, border-color 0.2s;
     }
 
-    .footer-social a:hover { color: var(--cream); }
+    .footer-social a:hover { color: var(--cream); border-color: var(--cream); }
 
     .footer-col h4 {
       font-family: var(--sans);
@@ -2214,6 +2221,29 @@
     if (a) a.click();
   });
 
+  // Footer icons mirror the contact rows that have a link (IG, map, LINE, email, Facebook, phone)
+  function buildFooterIcons() {
+    var box = document.querySelector('.footer-social');
+    if (!box) return;
+    var links = [];
+    document.querySelectorAll('.contact-info .contact-detail').forEach(function (row) {
+      var src = row.querySelector('.value a[href]');
+      var svg = row.querySelector('.contact-icon svg');
+      if (!src || !svg) return;
+      var a = document.createElement('a');
+      a.href = src.getAttribute('href');
+      if (src.target) { a.target = src.target; a.rel = 'noopener'; }
+      a.title = row.querySelector('.label').textContent.trim();
+      a.setAttribute('aria-label', a.title);
+      a.appendChild(svg.cloneNode(true));
+      links.push(a);
+    });
+    if (!links.length) return;
+    box.innerHTML = '';
+    links.forEach(function (a) { box.appendChild(a); });
+  }
+  buildFooterIcons();
+
   // Pre-select the product just viewed in the order form
   var modalKey = null;
   function reserveFromModal() {
@@ -2491,6 +2521,8 @@
           });
           document.getElementById('reviews').hidden = false;
         }
+
+        buildFooterIcons();
 
         // Re-apply Thai labels to the elements rewritten above
         if (document.documentElement.lang === 'th') setLang('th');
