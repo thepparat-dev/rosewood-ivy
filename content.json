@@ -1,6 +1,6 @@
 {
   "hero": {
-    "image": "Image/collections/hero/white-roses-basket.jpg"
+    "image": "/Image/uploads/ปก.JPG"
   },
   "collections": {
     "signature": {
@@ -43,10 +43,10 @@
       "price": 2800,
       "name_th": "คอลเลกชันกุหลาบ",
       "name_en": "Rose Collection",
-      "desc": "Premium roses in soft blush and garden tones, hand-tied and finished in our signature wrapping. Each stem is chosen for its form and fragrance. A truly luxurious gift that speaks volumes without a single word."
+      "desc": "Premium-quality roses in stunning hues, accompanied by a complimentary message card. Each stem is meticulously selected for its shape and fragrance, then hand-arranged and beautifully wrapped in our signature packaging—a luxurious gift that conveys a world of meaning without saying a word."
     },
     "roses-20": {
-      "image": "Image/collections/gift-edit/beauty-1.jpg",
+      "image": "/Image/uploads/กุหลาบ 20 ดอก.JPG",
       "price": 2500,
       "name_th": "กุหลาบ 20 ดอก",
       "name_en": "20 Roses",
