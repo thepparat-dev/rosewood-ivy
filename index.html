@@ -948,6 +948,21 @@
 
     .form-group textarea { resize: vertical; min-height: 100px; }
 
+    .order-preview {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      background: var(--cream);
+    }
+    .order-preview[hidden] { display: none; }
+    .order-preview img { width: 88px; height: 110px; object-fit: cover; flex-shrink: 0; background: var(--blush); }
+    .order-preview-type { font-family: var(--sans); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rose); margin-bottom: 4px; }
+    .order-preview-name { font-family: var(--serif); font-size: 20px; color: var(--deep); line-height: 1.3; }
+    .order-preview-price { font-family: var(--sans); font-size: 13px; color: var(--mid); margin-top: 4px; font-weight: 300; }
+
     /* ── FOOTER ── */
     footer {
       background: #1a110e;
@@ -1907,6 +1922,14 @@
             <option>Create Your Moment</option>
           </optgroup>
         </select>
+        <div class="order-preview" id="orderPreview" hidden>
+          <img alt="" />
+          <div>
+            <p class="order-preview-type"></p>
+            <p class="order-preview-name"></p>
+            <p class="order-preview-price"></p>
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label data-th="วันส่งและที่อยู่">Delivery Date & Address</label>
@@ -2204,7 +2227,39 @@
         break;
       }
     }
+    updateOrderPreview();
   }
+
+  // Order form: show a photo + name + price of the chosen arrangement
+  function updateOrderPreview() {
+    var sel = document.querySelector('#orderForm select[name="arrangement"]');
+    var box = document.getElementById('orderPreview');
+    if (!sel || !box) return;
+    var opt = sel.options[sel.selectedIndex];
+    if (!opt || !opt.value) { box.hidden = true; return; }
+    var parts = opt.textContent.split(' — ');
+    var name = parts[0].trim();
+    var group = opt.parentNode.tagName === 'OPTGROUP' ? opt.parentNode : null;
+    var p = null;
+    for (var k in products) if (products[k].name === name) { p = products[k]; break; }
+    // Items without their own product (e.g. Bespoke Moments) use their collection's photo
+    var groups = sel.querySelectorAll('optgroup');
+    var catImg = group && document.querySelectorAll('.cat-item img')[Array.prototype.indexOf.call(groups, group)];
+    var img = box.querySelector('img');
+    img.onerror = p && p.fallback ? function () { img.onerror = null; img.src = p.fallback; } : null;
+    img.src = p ? p.img : (catImg ? catImg.src : '');
+    img.alt = name;
+    box.querySelector('.order-preview-type').textContent = p ? p.type : (group ? group.label.replace(/^\d+\s*—\s*/, '') : '');
+    box.querySelector('.order-preview-name').textContent = name;
+    box.querySelector('.order-preview-price').textContent = parts[1] ? 'From ' + parts[1].trim() : (p ? p.price : 'Price upon request');
+    box.hidden = false;
+  }
+  (function () {
+    var form = document.getElementById('orderForm');
+    if (!form) return;
+    form.arrangement.addEventListener('change', updateOrderPreview);
+    form.addEventListener('reset', function () { setTimeout(updateOrderPreview, 0); });
+  })();
 
   function closeModal(e) {
     if (e.target === document.getElementById('modal')) {
