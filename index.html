@@ -1960,7 +1960,7 @@
       <h2 class="product-name" id="modalName"></h2>
       <p class="modal-price" id="modalPrice"></p>
       <p class="modal-desc" id="modalDesc"></p>
-      <a href="#contact" class="btn btn-dark" style="width:100%; text-align:center; display:block;" onclick="document.getElementById('modal').classList.remove('open')">Reserve This Arrangement</a>
+      <a href="#contact" class="btn btn-dark" style="width:100%; text-align:center; display:block;" onclick="reserveFromModal()">Reserve This Arrangement</a>
     </div>
   </div>
 </div>
@@ -2155,6 +2155,22 @@
     document.getElementById('modalPrice').textContent = p.price;
     document.getElementById('modalDesc').textContent = p.desc;
     document.getElementById('modal').classList.add('open');
+    modalKey = key;
+  }
+
+  // Pre-select the product just viewed in the order form
+  var modalKey = null;
+  function reserveFromModal() {
+    document.getElementById('modal').classList.remove('open');
+    var p = products[modalKey];
+    var sel = document.querySelector('#orderForm select[name="arrangement"]');
+    if (!p || !sel) return;
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].textContent.split(' — ')[0].trim() === p.name) {
+        sel.selectedIndex = i;
+        break;
+      }
+    }
   }
 
   function closeModal(e) {
