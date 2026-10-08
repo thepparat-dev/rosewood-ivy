@@ -859,6 +859,22 @@
 
     .contact-detail {
       margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      column-gap: 18px;
+      align-items: center;
+    }
+
+    .contact-icon {
+      grid-row: span 2;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(201,169,154,0.45);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rose);
     }
 
     .contact-detail .label {
@@ -1798,34 +1814,42 @@
     <h2 class="section-title" data-th="จอง<em>ดอกไม้ของคุณ</em>">Reserve <em>your blooms</em></h2>
     <p class="section-sub" data-th="ทักแชทเราใน Instagram หรือกรอกฟอร์ม เราจะตอบกลับภายในไม่กี่ชั่วโมง">DM us on Instagram or fill in the form. We'll get back to you within a few hours.</p>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
       <p class="label">Instagram</p>
       <p class="value"><a href="https://instagram.com/rosewoodandlvy" target="_blank" rel="noopener">@rosewoodandlvy</a></p>
     </div>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
       <p class="label" data-th="ที่ตั้ง">Location</p>
       <p class="value" data-th="กรุงเทพฯ ประเทศไทย">Bangkok, Thailand</p>
     </div>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
       <p class="label" data-th="เวลาทำการ">Hours</p>
       <p class="value" data-th="ทุกวัน 9:00 – 20:00">Daily 9:00 – 20:00</p>
     </div>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="1.5" y="5" width="12.5" height="11"/><path d="M14 9h4l3.5 3.5V16H14"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></span>
       <p class="label" data-th="การจัดส่ง">Delivery</p>
       <p class="value" data-th="ส่งวันเดียวกันในกรุงเทพฯ">Same-day within Bangkok</p>
     </div>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></span>
       <p class="label">LINE</p>
       <p class="value"><a id="contactLine" href="https://line.me/R/ti/p/@936haoss" target="_blank" rel="noopener">@936haoss</a></p>
     </div>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg></span>
       <p class="label" data-th="อีเมล">Email</p>
       <p class="value"><a id="contactEmail">&mdash;</a></p>
     </div>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
       <p class="label">Facebook</p>
       <p class="value"><a id="contactFacebook" target="_blank" rel="noopener">&mdash;</a></p>
     </div>
     <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
       <p class="label" data-th="โทรศัพท์">Phone</p>
       <p class="value"><a id="contactPhone">&mdash;</a></p>
     </div>
