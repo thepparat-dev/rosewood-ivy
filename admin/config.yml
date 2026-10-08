@@ -215,6 +215,7 @@ collections:
                 fields:
                   - { name: th, label: ภาษาไทย, widget: string, required: false }
                   - { name: en, label: ภาษาอังกฤษ, widget: string, required: false }
+              - { name: map_url, label: ลิงก์ Google Maps, widget: string, required: false, hint: "เปิด Google Maps → ค้นหาร้าน → กดแชร์ → คัดลอกลิงก์ แล้ววางที่นี่ — เว้นว่างไว้จะค้นหาตามชื่อที่ตั้งร้านด้านบน" }
               - name: hours
                 label: เวลาทำการ
                 widget: object

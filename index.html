@@ -1823,7 +1823,7 @@
     <div class="contact-detail">
       <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
       <p class="label" data-th="ที่ตั้ง">Location</p>
-      <p class="value" data-th="กรุงเทพฯ ประเทศไทย">Bangkok, Thailand</p>
+      <p class="value"><a id="contactMap" href="https://www.google.com/maps/search/?api=1&amp;query=Bangkok%2C%20Thailand" target="_blank" rel="noopener" data-th="กรุงเทพฯ ประเทศไทย">Bangkok, Thailand</a></p>
     </div>
     <div class="contact-detail">
       <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
@@ -2367,7 +2367,12 @@
         var details = document.querySelectorAll('.contact-info .contact-detail .value');
         if (details.length >= 4) {
           // details[0] (Instagram) is a link, updated with the other instagram.com links above
-          setBi(details[1], t.location && t.location.en, t.location && t.location.th);
+          var mapA = document.getElementById('contactMap');
+          setBi(mapA, t.location && t.location.en, t.location && t.location.th);
+          // Google Maps: the shop's own map link if set in /admin, else a search for the location text
+          var mapQuery = t.location && (t.location.en || t.location.th);
+          if (mapA && t.map_url) mapA.setAttribute('href', t.map_url);
+          else if (mapA && mapQuery) mapA.setAttribute('href', 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(mapQuery));
           setBi(details[2], t.hours && t.hours.en, t.hours && t.hours.th);
           setBi(details[3], t.delivery && t.delivery.en, t.delivery && t.delivery.th);
         }
