@@ -34,12 +34,12 @@ collections:
                 fields:
                   - { name: image, label: รูป, widget: image }
               - name: rose-edit
-                label: 01 · The Rose Edit
+                label: 01 · The Rose
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
               - name: gift-edit
-                label: 02 · The Curated Gift Edit
+                label: 02 · The Curated Gift
                 widget: object
                 fields:
                   - { name: image, label: รูป, widget: image }
