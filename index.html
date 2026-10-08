@@ -1799,7 +1799,7 @@
     <p class="section-sub" data-th="ทักแชทเราใน Instagram หรือกรอกฟอร์ม เราจะตอบกลับภายในไม่กี่ชั่วโมง">DM us on Instagram or fill in the form. We'll get back to you within a few hours.</p>
     <div class="contact-detail">
       <p class="label">Instagram</p>
-      <p class="value">@rosewoodandlvy</p>
+      <p class="value"><a href="https://instagram.com/rosewoodandlvy" target="_blank" rel="noopener">@rosewoodandlvy</a></p>
     </div>
     <div class="contact-detail">
       <p class="label" data-th="ที่ตั้ง">Location</p>
@@ -2333,7 +2333,7 @@
         // Contact block: the four detail values in page order (IG, location, hours, delivery)
         var details = document.querySelectorAll('.contact-info .contact-detail .value');
         if (details.length >= 4) {
-          if (t.instagram) details[0].textContent = '@' + String(t.instagram).replace(/^@+/, '');
+          // details[0] (Instagram) is a link, updated with the other instagram.com links above
           setBi(details[1], t.location && t.location.en, t.location && t.location.th);
           setBi(details[2], t.hours && t.hours.en, t.hours && t.hours.th);
           setBi(details[3], t.delivery && t.delivery.en, t.delivery && t.delivery.th);
