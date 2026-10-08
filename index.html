@@ -876,6 +876,8 @@
       justify-content: center;
       color: var(--rose);
     }
+    .contact-detail:has(.value a[href]) .contact-icon { cursor: pointer; transition: color 0.2s, border-color 0.2s; }
+    .contact-detail:has(.value a[href]) .contact-icon:hover { color: var(--blush); border-color: var(--blush); }
 
     .contact-detail .label {
       font-family: var(--sans);
@@ -2181,6 +2183,13 @@
     document.getElementById('modal').classList.add('open');
     modalKey = key;
   }
+
+  // Contact icons open the same link as the value next to them
+  document.addEventListener('click', function (e) {
+    var icon = e.target.closest && e.target.closest('.contact-icon');
+    var a = icon && icon.parentNode.querySelector('.value a[href]');
+    if (a) a.click();
+  });
 
   // Pre-select the product just viewed in the order form
   var modalKey = null;
