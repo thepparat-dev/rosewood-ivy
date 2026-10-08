@@ -60,14 +60,14 @@
       "desc": "Fifty premium roses, hand-tied stem by stem and wrapped in the Rosewood & Ivy signature finish. Full, romantic, and beautifully weighted in the arms."
     },
     "roses-101": {
-      "image": "Image/collections/gift-edit/beauty-7.jpg",
-      "price": 8900,
+      "image": "/Image/uploads/101.JPG",
+      "price": 6990,
       "name_th": "กุหลาบ 101 ดอก",
       "name_en": "101 Roses",
       "desc": "One hundred and one premium roses, hand-tied into a single breathtaking bouquet. This is the one that stops the room — reserved for proposals, milestones, and love that needs no explanation."
     },
     "roses-bespoke": {
-      "image": "Image/collections/gift-edit/gift-5.jpg",
+      "image": "/Image/uploads/กุหลาบสั่งทำพิเศษ.JPG",
       "price": null,
       "name_th": "ช่อกุหลาบสั่งทำพิเศษ",
       "name_en": "Custom Rose Bouquet",
