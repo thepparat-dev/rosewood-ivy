@@ -74,35 +74,35 @@
       "desc": "Any colour, any count, any scale. Tell us the moment and we will hand-tie premium roses to match it, finished in signature wrapping and styled entirely around you."
     },
     "gift-beauty": {
-      "image": "Image/collections/gift-edit/beauty-5.jpg",
+      "image": "/Image/uploads/ปก the signa.jpg",
       "price": 4500,
       "name_th": "ดอกไม้ & บิวตี้",
       "name_en": "Flowers & Beauty",
       "desc": "Fresh blooms arranged around luxury beauty — Dior, Laneige, and the pieces she already loves. Presented in a woven basket or hatbox, curated as one unforgettable gift."
     },
     "gift-eyewear": {
-      "image": "Image/collections/stock/gift-eyewear.jpg",
-      "price": null,
+      "image": "/Image/uploads/IMG_8380.JPG",
+      "price": 50000,
       "name_th": "ดอกไม้ & แว่นตา",
       "name_en": "Flowers & Eyewear",
       "desc": "A designer pair, nested into fresh blooms and styled to be opened slowly. Bring us the eyewear or let us source it — we design the arrangement around the piece."
     },
     "gift-fashion": {
-      "image": "Image/collections/stock/gift-fashion.jpg",
+      "image": "/Image/uploads/IMG_8851.JPG",
       "price": null,
       "name_th": "ดอกไม้ & แฟชั่น",
       "name_en": "Flowers & Fashion",
       "desc": "Flowers composed around a fashion piece — a scarf, a silk, something chosen with her in mind. The blooms are matched to the palette so the whole gift reads as one."
     },
     "gift-bags": {
-      "image": "Image/collections/stock/gift-bags.jpg",
+      "image": "/Image/uploads/IMG_8855.JPG",
       "price": null,
       "name_th": "ดอกไม้ & กระเป๋า",
       "name_en": "Flowers & Bags",
       "desc": "The bag she has been quietly wanting, presented in a bed of fresh blooms. Designed so the flowers frame the gift rather than compete with it."
     },
     "gift-more": {
-      "image": "Image/collections/gift-edit/gift-2.jpg",
+      "image": "/Image/uploads/IMG_8710.JPG",
       "price": null,
       "name_th": "ดอกไม้ & อื่น ๆ",
       "name_en": "Flowers & Jewelry",
@@ -137,6 +137,7 @@
       "th": "กรุงเทพฯ ประเทศไทย",
       "en": "Bangkok, Thailand"
     },
+    "map_url": "",
     "hours": {
       "th": "ทุกวัน 9:00 – 20:00",
       "en": "Daily 9:00 – 20:00"
